@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Infi img.jpg-6d69b0edacd881d7494c148ca6b936d4.stex"
+path="res://.import/Infi img.jpg-839c4833851874cf595d401c7a6654d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BG images/Infi img.jpg"
-dest_files=[ "res://.import/Infi img.jpg-6d69b0edacd881d7494c148ca6b936d4.stex" ]
+source_file="res://Assets/BG images/Infi img.jpg"
+dest_files=[ "res://.import/Infi img.jpg-839c4833851874cf595d401c7a6654d1.stex" ]
 
 [params]
 

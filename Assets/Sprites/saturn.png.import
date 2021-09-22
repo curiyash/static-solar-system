@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/saturn.png-ec1c145c8b40ae53464381cedf8c1e75.stex"
+path="res://.import/saturn.png-29d6daa1e07cfb296ab0d2906624eb8b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/saturn.png"
-dest_files=[ "res://.import/saturn.png-ec1c145c8b40ae53464381cedf8c1e75.stex" ]
+source_file="res://Assets/Sprites/saturn.png"
+dest_files=[ "res://.import/saturn.png-29d6daa1e07cfb296ab0d2906624eb8b.stex" ]
 
 [params]
 

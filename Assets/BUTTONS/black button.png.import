@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black button.png-b09d351d82caff47b523ac9f42fef593.stex"
+path="res://.import/black button.png-98d97a80c522b9459cbd51776a4c160f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BUTTONS/black button.png"
-dest_files=[ "res://.import/black button.png-b09d351d82caff47b523ac9f42fef593.stex" ]
+source_file="res://Assets/BUTTONS/black button.png"
+dest_files=[ "res://.import/black button.png-98d97a80c522b9459cbd51776a4c160f.stex" ]
 
 [params]
 

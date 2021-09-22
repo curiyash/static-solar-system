@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/more starry.jpg-17176ccd6fa7366e5692b11d41c63fd4.stex"
+path="res://.import/more starry.jpg-8b8cb445caf836193a0a478c6c24259f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BG images/more starry.jpg"
-dest_files=[ "res://.import/more starry.jpg-17176ccd6fa7366e5692b11d41c63fd4.stex" ]
+source_file="res://Assets/BG images/more starry.jpg"
+dest_files=[ "res://.import/more starry.jpg-8b8cb445caf836193a0a478c6c24259f.stex" ]
 
 [params]
 

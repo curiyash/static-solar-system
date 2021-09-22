@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button-music_on-removebg-preview.png-5b25db8ad7b343eec708737467896ed0.stex"
+path="res://.import/button-music_on-removebg-preview.png-2f41728185759c645e5091ffe199476d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BUTTONS/button-music_on-removebg-preview.png"
-dest_files=[ "res://.import/button-music_on-removebg-preview.png-5b25db8ad7b343eec708737467896ed0.stex" ]
+source_file="res://Assets/BUTTONS/button-music_on-removebg-preview.png"
+dest_files=[ "res://.import/button-music_on-removebg-preview.png-2f41728185759c645e5091ffe199476d.stex" ]
 
 [params]
 

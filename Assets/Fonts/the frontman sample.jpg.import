@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/the frontman sample.jpg-89a5724f2e68269d0b05a06901662598.stex"
+path="res://.import/the frontman sample.jpg-a6f7731a61d00c5ea3fe5d6d72585b82.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fonts/the frontman sample.jpg"
-dest_files=[ "res://.import/the frontman sample.jpg-89a5724f2e68269d0b05a06901662598.stex" ]
+source_file="res://Assets/Fonts/the frontman sample.jpg"
+dest_files=[ "res://.import/the frontman sample.jpg-a6f7731a61d00c5ea3fe5d6d72585b82.stex" ]
 
 [params]
 

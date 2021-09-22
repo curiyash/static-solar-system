@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/close-button-small-icon-removebg-preview.png-8d9738b2c538801337dfd10a9bc8af02.stex"
+path="res://.import/close-button-small-icon-removebg-preview.png-6e77cabeaa67ccb3430e2e0bc32c85ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BUTTONS/close-button-small-icon-removebg-preview.png"
-dest_files=[ "res://.import/close-button-small-icon-removebg-preview.png-8d9738b2c538801337dfd10a9bc8af02.stex" ]
+source_file="res://Assets/BUTTONS/close-button-small-icon-removebg-preview.png"
+dest_files=[ "res://.import/close-button-small-icon-removebg-preview.png-6e77cabeaa67ccb3430e2e0bc32c85ee.stex" ]
 
 [params]
 

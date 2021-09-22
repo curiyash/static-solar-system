@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Deathstar IV.png-553dee9469650781887f50db22153cb4.stex"
+path="res://.import/Deathstar IV.png-8d2a79340cd02a08817560f4a2ad6069.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fonts/Deathstar IV.png"
-dest_files=[ "res://.import/Deathstar IV.png-553dee9469650781887f50db22153cb4.stex" ]
+source_file="res://Assets/Fonts/Deathstar IV.png"
+dest_files=[ "res://.import/Deathstar IV.png-8d2a79340cd02a08817560f4a2ad6069.stex" ]
 
 [params]
 

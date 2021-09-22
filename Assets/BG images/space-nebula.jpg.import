@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/space-nebula.jpg-389687c48425c6e316dd7861ce31bca9.stex"
+path="res://.import/space-nebula.jpg-2d2d47ed57cb9f056c598ff4423637a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BG images/space-nebula.jpg"
-dest_files=[ "res://.import/space-nebula.jpg-389687c48425c6e316dd7861ce31bca9.stex" ]
+source_file="res://Assets/BG images/space-nebula.jpg"
+dest_files=[ "res://.import/space-nebula.jpg-2d2d47ed57cb9f056c598ff4423637a7.stex" ]
 
 [params]
 

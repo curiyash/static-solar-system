@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/network stars.jpeg-4b17f9ea42e7d66ecc64ceb939371424.stex"
+path="res://.import/network stars.jpeg-3839b7739ad6ed831b5c5134b017ac34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BG images/network stars.jpeg"
-dest_files=[ "res://.import/network stars.jpeg-4b17f9ea42e7d66ecc64ceb939371424.stex" ]
+source_file="res://Assets/BG images/network stars.jpeg"
+dest_files=[ "res://.import/network stars.jpeg-3839b7739ad6ed831b5c5134b017ac34.stex" ]
 
 [params]
 

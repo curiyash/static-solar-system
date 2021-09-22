@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stars-colored-blue.png-4382c3839a90513f64ee45379bef2641.stex"
+path="res://.import/stars-colored-blue.png-8ba0eb1e8bfd2b31af6244363dad2537.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BG images/stars-colored-blue.png"
-dest_files=[ "res://.import/stars-colored-blue.png-4382c3839a90513f64ee45379bef2641.stex" ]
+source_file="res://Assets/BG images/stars-colored-blue.png"
+dest_files=[ "res://.import/stars-colored-blue.png-8ba0eb1e8bfd2b31af6244363dad2537.stex" ]
 
 [params]
 

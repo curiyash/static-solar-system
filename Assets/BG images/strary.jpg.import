@@ -6,7 +6,7 @@ valid=false
 
 [deps]
 
-source_file="res://assets/BG images/strary.jpg"
+source_file="res://Assets/BG images/strary.jpg"
 [params]
 
 compress/mode=0

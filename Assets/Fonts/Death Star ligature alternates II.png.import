@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Death Star ligature alternates II.png-fdb889f4cb18055f3078dd1143366701.stex"
+path="res://.import/Death Star ligature alternates II.png-603b7d811b885d380fe0c9e03f81cb00.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fonts/Death Star ligature alternates II.png"
-dest_files=[ "res://.import/Death Star ligature alternates II.png-fdb889f4cb18055f3078dd1143366701.stex" ]
+source_file="res://Assets/Fonts/Death Star ligature alternates II.png"
+dest_files=[ "res://.import/Death Star ligature alternates II.png-603b7d811b885d380fe0c9e03f81cb00.stex" ]
 
 [params]
 

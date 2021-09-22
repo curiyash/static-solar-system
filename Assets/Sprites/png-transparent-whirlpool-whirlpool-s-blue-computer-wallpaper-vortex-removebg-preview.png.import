@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/png-transparent-whirlpool-whirlpool-s-blue-computer-wallpaper-vortex-removebg-preview.png-db8b72b1da4e9841e9a5d194135b5343.stex"
+path="res://.import/png-transparent-whirlpool-whirlpool-s-blue-computer-wallpaper-vortex-removebg-preview.png-58aad1a4183a3929ae3076efe6e1786b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/png-transparent-whirlpool-whirlpool-s-blue-computer-wallpaper-vortex-removebg-preview.png"
-dest_files=[ "res://.import/png-transparent-whirlpool-whirlpool-s-blue-computer-wallpaper-vortex-removebg-preview.png-db8b72b1da4e9841e9a5d194135b5343.stex" ]
+source_file="res://Assets/Sprites/png-transparent-whirlpool-whirlpool-s-blue-computer-wallpaper-vortex-removebg-preview.png"
+dest_files=[ "res://.import/png-transparent-whirlpool-whirlpool-s-blue-computer-wallpaper-vortex-removebg-preview.png-58aad1a4183a3929ae3076efe6e1786b.stex" ]
 
 [params]
 
