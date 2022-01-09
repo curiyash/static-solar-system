@@ -8,9 +8,10 @@ extends Line2D
 var target
 var point
 export(NodePath) var targetPath
- 
+var prev_zoom
 func _ready():
 	target = get_node(targetPath)
+	prev_zoom = get_node("/root/Godot physics/physics/CanvasLayer/Camera2D").get_zoom().x
 	pass
 
 var i = -1
@@ -30,4 +31,12 @@ func _physics_process(delta):
 	if j==100:
 		j = 0
 	add_point(point)
+	var screen_zoom = get_node("/root/Godot physics/physics/CanvasLayer/Camera2D").get_zoom().x
+	var line = get_node(".")
+	if (prev_zoom<screen_zoom):
+		line.set_width(line.get_width()*1.21)
+		prev_zoom = screen_zoom
+	elif (prev_zoom>screen_zoom):
+		line.set_width(line.get_width()/1.21)
+		prev_zoom = screen_zoom
 	update()

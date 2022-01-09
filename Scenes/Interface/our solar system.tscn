@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/BUTTONS/B1-removebg-preview.png" type="Texture" id=2]
 [ext_resource path="res://assets/BUTTONS/B2-removebg-preview.png" type="Texture" id=3]
 [ext_resource path="res://assets/Fonts/VirtualRotRegular-R51V.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://SCRIPTS/our solar system.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Interface/our solar system.gd" type="Script" id=5]
 [ext_resource path="res://assets/music/OutThere.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/BUTTONS/button-music_on-removebg-preview.png" type="Texture" id=7]
 [ext_resource path="res://assets/BUTTONS/button-musc_off-removebg-preview.png" type="Texture" id=8]

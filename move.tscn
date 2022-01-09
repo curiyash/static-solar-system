@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Interface/gameplay.tscn" type="PackedScene" id=1]
+
+[node name="Main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 5360, 5400 )
+
+[node name="gameplay" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 1 )]

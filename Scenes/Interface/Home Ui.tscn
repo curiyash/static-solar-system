@@ -6,18 +6,19 @@
 [ext_resource path="res://assets/BUTTONS/button-music_on-removebg-preview.png" type="Texture" id=6]
 [ext_resource path="res://assets/BUTTONS/close-button-small-icon-removebg-preview.png" type="Texture" id=7]
 [ext_resource path="res://assets/BUTTONS/png-close-button-icon-removebg-preview.png" type="Texture" id=8]
-[ext_resource path="res://SCENES/gameplay.tscn" type="PackedScene" id=9]
-[ext_resource path="res://SCENES/collide.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Interface/gameplay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Interface/collide.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/Fonts/The Frontman.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/Sprites/mercury.png" type="Texture" id=12]
 [ext_resource path="res://assets/Sprites/earth.png" type="Texture" id=13]
 [ext_resource path="res://assets/Sprites/moon.png" type="Texture" id=14]
 [ext_resource path="res://assets/Sprites/saturn.png" type="Texture" id=15]
-[ext_resource path="res://SCENES/bg anim.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Interface/bg anim.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/BUTTONS/B1-removebg-preview.png" type="Texture" id=17]
 [ext_resource path="res://assets/BUTTONS/B2-removebg-preview.png" type="Texture" id=18]
 [ext_resource path="res://assets/music/OutThere.ogg" type="AudioStream" id=19]
-[ext_resource path="res://SCRIPTS/shooting stars.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/Interface/shooting stars.gd" type="Script" id=20]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"

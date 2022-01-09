@@ -1,0 +1,16 @@
+Button press - color change
+Edit Background images
+Font
+Sidebar of planet info
+Pixelorama
+Adding/Removing a planet
+Links
+(planet Removal addition,
+ 
+if possible, planet addition at user defined point
+ 
+Per planet mass change
+ 
+deletion of ejected bodies)
+Detecting collisions and handling them
+Boundary beyond which planet is removed from memory
