@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/BG images/Infi img.jpg" type="Texture" id=1]
 [ext_resource path="res://Scripts/Interface/scrollingbackground.gd" type="Script" id=2]
+[ext_resource path="res://Assets/BG images/network stars.jpeg" type="Texture" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -19,6 +19,9 @@ shader_param/scroll_speed = null
 
 [node name="gameplay" type="Node2D"]
 position = Vector2( 200000, 0 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.623529, 0.596078, 0.596078, 1 )
@@ -31,8 +34,7 @@ margin_left = -500000.0
 margin_top = -500000.0
 margin_right = 500000.0
 margin_bottom = 500000.0
-rect_scale = Vector2( 0.536672, 0.558723 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
 script = ExtResource( 2 )

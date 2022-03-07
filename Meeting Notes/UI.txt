@@ -1,0 +1,28 @@
+1) Static Tools
+    - Zoom In/Zoom Out
+    - Speed Up/Speed Down
+    - Orbit Visibility
+    - Trail Visibility
+    - Reset
+2) Dynamic Tools
+# requires Menu for selection of planets
+    - Change velocity
+    - Change mass
+    *- Change sprite
+3) Sprites
+4) Fonts
+
+* How to Group Static and Dynamic Tools?
+* Shortlist and then Try Out themes
+
+###
+1) Zoom In/Zoom Out not needed in Mobile
+2) Take Slider input in the form of dropdown
+3) Theme - Old school theme
+Pixel Art - buttons
+Central Theme - Pixel Art
+4) Create small info guide about simulation
+5) Pre-made orbits
+6) Pixel Font - Thaleah
+https://www.myfonts.com/tags/pixel+art/
+###

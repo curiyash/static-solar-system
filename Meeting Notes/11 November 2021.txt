@@ -1,0 +1,43 @@
+1) Orbits - elliptical
+* Orbits dynamically
+2) UI - 
+	1) Graphics
+	2) Background
+	3) Sound
+3) Input, Buttons - Features
+* 4) Fast forward-
+	1) store and animate
+	2) scale G and vel
+5) Velocity change with buttons
+6) Planet swap
+7) Change to GLES2
+8) Parallax, Home Screen Background
+
+* Separate scene Game 
+	- Unstable system (Give access to all the planetary info) 
+	- Points directly proportional to time when collision occurs
+	- Storing high score
+	- Local high score
+	- Planet properties (Graphics)
+* Disappear orbits when they change
+
+Default - complete: Graphics, Background, Physics System
+Gamified
+
+Default -
+1) Graphics - Background (Dynamic - Interface), Images
+2) Orbit design, physics
+* Moon
+Change features of planet with code
+3) Information Displayer
+* 4) Links to materials
+
+Gamified:
+1) Input/UI - Input: Buttons, text/scrollbar
+
+# Features:
+1) Position
+2) Velocity
+3) Masses
+* 4) G
+* 5) Rotation

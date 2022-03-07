@@ -16,7 +16,7 @@ func get_mag(pos):
 
 func _physics_process(delta):
 	planet = $Control/OptionButton.planet_name #$LineEdit.get_text()
-	var name = "res://Assets/Sprites/%s.png"%planet
+	var name = "res://New Assets/%s.png"%planet
 	$Sprite.texture = load(name)
 	var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
 	var namen = "[center]Name: [u]%s[/u][/center]"%format

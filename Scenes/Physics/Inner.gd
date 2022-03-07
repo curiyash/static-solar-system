@@ -20,6 +20,7 @@ func _physics_process(delta):
 	elif (prev_zoom>screen_zoom):
 		sprite.set_scale(sprite.get_scale()/1.21)
 		prev_zoom = screen_zoom
+	#get_node(".").set_rotation_degrees(get_rotation_degrees()+10)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

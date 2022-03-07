@@ -1,0 +1,25 @@
+1) Sprites change
+Choice to user to change planet
+2) Interface, Physics
+3) Scenes Interlinking
+4) Button hover border animation
+5) Integrate - Static tools, Dynamic Tools (Organize)
+6) Make Slider
+7) Select  Font - different for games/buttons
+
+Shalini, Shrutee - Buttons hover, font, Pixel Art (sprites)
+Yash - Background scale, make Slider, Physics, Image
+Vaishnavi - changing of Dynamic properties
+~ Quantity 
+
+Discussion sessions on -
+1) Design - buttons, font, sprites
+2) Physics - scalability (like Solar System)
+3) Slider info - links
+
+Retro-style
+
+*Reset button in static
+
+Decided:
+1) Same bg for main and slider

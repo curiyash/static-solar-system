@@ -36,11 +36,11 @@ export(NodePath) var targetPath
 export(float) var size
 func _ready():
 	target = get_node(targetPath)
+	print(target)
 	pass # Replace with function body.
 
-func _physics_process(delta):
-	size = get_zoom();
-
+#func _physics_process(delta):
+#	size = get_zoom()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

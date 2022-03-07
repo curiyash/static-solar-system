@@ -1,0 +1,20 @@
+Interface
+  Background image - pixelated
+  Interface design - Make compiled drive folder for finalized assets. If possible, implement styles and their assets in GoDot and send else report on group.
+  Modify interface according to discussion
+  Compile real information from internet and send in Google Doc. Give links to relevant pages. Especially NASA's pages on planets
+
+General
+  Update Repository
+  Refactor Code
+  Organize files neatly, remove unneccesary files
+  Integrate Physics and Interface Scenes
+
+Physics
+  Modify planets' masses
+  Fix "speeding" up limit
+  To Rotate or Not to rotate planets, that's the question
+  Set size and distances appropriately
+
+Optional:
+Remove/Add Planets
