@@ -151,8 +151,10 @@ func _on_CheckButton_pressed():
 	var trails = get_node("Trails")
 	if trails.is_visible()==true:
 		trails.set_visible(false)
+		$CanvasLayer/StaticTools/TextureRect/CheckButton/Label2.text = "On"
 	else:
 		trails.set_visible(true)
+		$CanvasLayer/StaticTools/TextureRect/CheckButton/Label2.text = "Off"
 
 func _on_Remove_pressed():
 	print("Removing")
@@ -219,3 +221,14 @@ func _on_MassD_pressed():
 			#print(node.get_linear_velocity())
 			#print(node.get_mass())
 			node.set_mass(node.get_mass()/factor)
+
+
+func _on_CheckButton2_pressed():
+	var current = get_node("Orbits")
+	if current.is_visible()==true:
+		current.set_visible(false)
+		$CanvasLayer/StaticTools/TextureRect2/CheckButton2/Label.text = "On"
+	else:
+		current.set_visible(true)
+		$CanvasLayer/StaticTools/TextureRect2/CheckButton2/Label.text = "Off"
+	pass # Replace with function body.

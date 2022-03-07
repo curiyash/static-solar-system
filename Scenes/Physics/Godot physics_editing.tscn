@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/Physics/Orbits.gd" type="Script" id=1]
 [ext_resource path="res://New Assets/mercury.png" type="Texture" id=2]
@@ -13,20 +13,27 @@
 [ext_resource path="res://Scenes/Physics/gameplay.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Physics/Mercury.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Physics/Sprite.gd" type="Script" id=13]
-[ext_resource path="res://Assets/UI Design-20211202T134133Z-001/UI Design/Buttons.jpg" type="Texture" id=14]
-[ext_resource path="res://Assets/BG images/network stars.jpeg" type="Texture" id=15]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Zoom +.png" type="Texture" id=14]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Zoom - .png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Physics/SliderInfo.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Physics/Menu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Physics/Inner.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Physics/TrailColor.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/Physics/SpriteChanger.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Physics/SpriteChage.gd" type="Script" id=21]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Zoom.png" type="Texture" id=22]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Trail visibility.png" type="Texture" id=23]
 [ext_resource path="res://New Assets/sun.png" type="Texture" id=24]
 [ext_resource path="res://New Assets/saturn.png" type="Texture" id=25]
 [ext_resource path="res://New Assets/venus.png" type="Texture" id=26]
 [ext_resource path="res://New Assets/earth.png" type="Texture" id=27]
 [ext_resource path="res://New Assets/mars.png" type="Texture" id=28]
 [ext_resource path="res://New Assets/jupiter.png" type="Texture" id=29]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Tstatus.png" type="Texture" id=30]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Ostatus.png" type="Texture" id=31]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Orbit visibility.png" type="Texture" id=32]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Stop and reset.png" type="Texture" id=33]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Common container.png" type="Texture" id=34]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 48.0104
@@ -49,31 +56,9 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxTexture" id=6]
-content_margin_right = 5.0
-texture = ExtResource( 14 )
-region_rect = Rect2( 0, 0, 372, 360 )
-
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 15 )
-region_rect = Rect2( 0, 0, 1200, 1200 )
-
 [sub_resource type="DynamicFont" id=8]
 size = 21
 font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 14 )
-region_rect = Rect2( 0, 0, 402, 386 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 1, 1, 1, 1 )
-border_blend = true
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.419608, 0.0627451, 0.0627451, 1 )
@@ -103,13 +88,22 @@ PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
 [sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+bg_color = Color( 0.854902, 0.184314, 0.184314, 1 )
 
 [sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
+bg_color = Color( 0.854902, 0.184314, 0.184314, 1 )
 
 [sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [node name="Godot physics" type="Node2D"]
 
@@ -838,14 +832,18 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="physics/CanvasLayer/StaticTools"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.41422
+margin_right = 1.41422
 color = Color( 1, 1, 1, 0.164706 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -860,74 +858,109 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Add2" type="Button" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer"]
-margin_right = 136.0
-margin_bottom = 100.0
-size_flags_horizontal = 3
-custom_styles/hover = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer/Add2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
-text = "Zoom In"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Add3" type="Button" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer"]
-margin_left = 140.0
-margin_right = 277.0
-margin_bottom = 100.0
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer/Add3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -2.0
-custom_fonts/font = SubResource( 8 )
-text = "Zoom out"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
 margin_top = 104.0
 margin_right = 277.0
-margin_bottom = 124.0
+margin_bottom = 104.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Add" type="Button" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2"]
-margin_right = 136.0
-margin_bottom = 20.0
+[node name="VBoxContainer" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
+margin_top = 108.0
+margin_right = 277.0
+margin_bottom = 108.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
+margin_top = 112.0
+margin_right = 277.0
+margin_bottom = 112.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
+margin_top = 116.0
+margin_right = 277.0
+margin_bottom = 116.0
+grow_horizontal = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
+margin_top = 120.0
+margin_right = 277.0
+margin_bottom = 120.0
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools"]
+visible = false
+margin_left = -2.0
+margin_top = 502.0
+margin_right = 275.0
+margin_bottom = 555.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Add2" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
+margin_left = 32.0
+margin_top = 15.0
+margin_right = 207.0
+margin_bottom = 96.0
 size_flags_horizontal = 3
-custom_styles/hover = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+texture_normal = ExtResource( 22 )
+expand = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2/Add"]
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 4.0
+custom_fonts/font = SubResource( 8 )
+text = "Zoom"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/StaticTools/Add2"]
+anchor_left = 0.318
+anchor_top = 0.595
+anchor_right = 0.318
+anchor_bottom = 0.595
+margin_left = -55.0824
+margin_top = -5.41079
+margin_right = 49.9176
+margin_bottom = 76.5892
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add4" type="TextureButton" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 23.0
+margin_right = -30.0
+margin_bottom = -25.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = SubResource( 8 )
 text = "+"
 align = 1
@@ -938,16 +971,88 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Subtract" type="Button" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2"]
-margin_left = 140.0
-margin_right = 277.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
+[node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/StaticTools/Add2"]
+anchor_left = 0.398
+anchor_top = 0.641
+anchor_right = 0.398
+anchor_bottom = 0.641
+margin_left = -0.812546
+margin_top = -8.71238
+margin_right = 105.187
+margin_bottom = 71.2876
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2/Subtract"]
+[node name="Add3" type="TextureButton" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 21.0
+margin_right = -38.0
+margin_bottom = -22.0
+mouse_default_cursor_shape = 2
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect2/Add3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -2.0
+custom_fonts/font = SubResource( 8 )
+text = "-"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
+margin_left = 291.0
+margin_top = 431.0
+margin_right = 353.0
+margin_bottom = 473.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 8 )
+text = "+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtract" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
+margin_left = 343.715
+margin_top = 432.316
+margin_right = 405.715
+margin_bottom = 474.316
+size_flags_horizontal = 3
+texture_normal = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Subtract"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 8 )
@@ -960,139 +1065,205 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
-margin_top = 128.0
-margin_right = 277.0
-margin_bottom = 168.0
-
-[node name="CheckButton" type="CheckButton" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer"]
-margin_right = 277.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer/CheckButton"]
-anchor_top = -0.108
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 25.1109
-margin_top = 17.0271
-margin_right = -24.3891
-margin_bottom = -13.2929
-text = "Trail Visibility"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
-margin_top = 172.0
-margin_right = 277.0
-margin_bottom = 212.0
-
-[node name="CheckButton2" type="CheckButton" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer2"]
-margin_right = 277.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer2/CheckButton2"]
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 25.3259
-margin_top = 11.8015
-margin_right = -21.1741
-margin_bottom = -14.1985
-text = "Orbit Visibility"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
-margin_top = 216.0
-margin_right = 277.0
-margin_bottom = 276.0
-grow_horizontal = 0
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SetSpeed" type="Button" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer4"]
-margin_left = 1.0
-margin_right = 136.0
-margin_bottom = 60.0
+[node name="SetSpeed" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
+margin_left = -4.8165
+margin_top = 302.595
+margin_right = 143.184
+margin_bottom = 380.595
 rect_min_size = Vector2( 135, 60 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 33 )
+expand = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollSpeed" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer4/SetSpeed"]
+[node name="ScrollSpeed" type="Label" parent="physics/CanvasLayer/StaticTools/SetSpeed"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Stop moving Background"
+margin_left = 24.0
+margin_top = 14.0
+margin_right = -24.0
+margin_bottom = -14.0
+text = "Stop Moving Background"
 align = 1
 valign = 1
 autowrap = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Reset" type="Button" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer4"]
-margin_left = 140.0
-margin_right = 275.0
-margin_bottom = 60.0
+[node name="Reset" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
+margin_left = 126.659
+margin_top = 306.476
+margin_right = 266.659
+margin_bottom = 377.476
 rect_min_size = Vector2( 135, 60 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Reset"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "Reset"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools/VBoxContainer2"]
-margin_top = 280.0
-margin_right = 277.0
-margin_bottom = 280.0
+[node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
+margin_left = 64.0
+margin_top = 122.0
+margin_right = 181.0
+margin_bottom = 207.0
+texture = ExtResource( 23 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="SpriteChanger" type="Control" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3"]
-margin_right = 277.0
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 19.8108
+margin_right = -19.0
+margin_bottom = -21.1892
+text = "Trail Visibility"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="TextureButton" parent="physics/CanvasLayer/StaticTools/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 45.0
+margin_bottom = 23.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 30 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect/CheckButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Off"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
+margin_left = 62.0
+margin_top = 210.0
+margin_right = 181.0
+margin_bottom = 286.0
+texture = ExtResource( 32 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 18.0
+margin_right = -19.0
+margin_bottom = -19.0
+text = "Orbit Visibility"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton2" type="TextureButton" parent="physics/CanvasLayer/StaticTools/TextureRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 45.0
+margin_bottom = 28.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 31 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect2/CheckButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Off"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
+anchor_left = -0.036
+anchor_top = 0.608
+anchor_right = 1.0
+anchor_bottom = 1.02
+margin_left = -0.0280008
+margin_top = 0.199982
+margin_right = -9.99997
+margin_bottom = -6.10352e-05
+texture = ExtResource( 34 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteChanger" type="Control" parent="physics/CanvasLayer/StaticTools/TextureRect3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3/SpriteChanger"]
-position = Vector2( 140, 120 )
-scale = Vector2( 0.295456, 0.295456 )
+[node name="Control" parent="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger" instance=ExtResource( 17 )]
+anchor_left = 0.196
+anchor_top = 0.733
+anchor_right = 0.85
+anchor_bottom = 0.875
+margin_left = 0.0405769
+margin_top = -0.0464935
+margin_right = -0.117432
+margin_bottom = -0.120499
 
-[node name="ColorRect" type="ColorRect" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3/SpriteChanger"]
-modulate = Color( 0.632813, 0.632813, 0.632813, 0.2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -1.88776
-margin_bottom = -1.88776
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Control" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3/SpriteChanger" instance=ExtResource( 17 )]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 176.0
-margin_right = 0.0
-margin_bottom = 0.0
-
-[node name="OptionButton" type="OptionButton" parent="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3/SpriteChanger"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -177.0
+[node name="OptionButton" type="OptionButton" parent="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger"]
+anchor_left = 0.173
+anchor_top = 0.121
+anchor_right = 0.823
+anchor_bottom = 0.263
+margin_left = 0.0789986
+margin_top = 0.112999
+margin_right = 0.0289917
+margin_bottom = 0.0389938
 theme = SubResource( 13 )
 custom_styles/hover = SubResource( 14 )
 custom_styles/pressed = SubResource( 15 )
 custom_styles/normal = SubResource( 16 )
-text = "Sprites"
+text = "   Sprites"
 items = [ "Sprites", null, false, 0, null ]
 selected = 0
 script = ExtResource( 21 )
@@ -1100,45 +1271,64 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="physics/CanvasLayer/StaticTools"]
-margin_left = -2.0
-margin_top = 502.0
-margin_right = 275.0
-margin_bottom = 555.0
+[node name="Control2" type="Control" parent="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger"]
+anchor_left = 0.329
+anchor_top = 0.372
+anchor_right = 0.697
+anchor_bottom = 0.721
+margin_left = -0.133011
+margin_top = 0.115997
+margin_right = -0.0690002
+margin_bottom = -0.0870056
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger/Control2"]
+position = Vector2( 51, 43 )
+scale = Vector2( 0.295456, 0.295456 )
+
+[node name="TextureRect4" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
+anchor_left = 0.957
+anchor_top = 0.807
+anchor_right = 1.957
+anchor_bottom = 0.94
+margin_left = -0.0889893
+margin_top = -0.200012
+margin_right = -0.0889893
+margin_bottom = -6.10352e-05
+texture = ExtResource( 34 )
+expand = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="TrailColor" type="Control" parent="physics/CanvasLayer/StaticTools/VBoxContainer4"]
-margin_right = 277.0
+[node name="TrailColor" type="Control" parent="physics/CanvasLayer/StaticTools/TextureRect4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" parent="physics/CanvasLayer/StaticTools/VBoxContainer4/TrailColor" instance=ExtResource( 17 )]
-margin_left = 2.0
-margin_top = 4.0
-margin_right = 279.0
-margin_bottom = 22.0
+[node name="Control" parent="physics/CanvasLayer/StaticTools/TextureRect4/TrailColor" instance=ExtResource( 17 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 61.5559
+margin_top = 17.937
+margin_right = -49.4441
+margin_bottom = -43.063
 
-[node name="ColorPicker" type="ColorPickerButton" parent="physics/CanvasLayer/StaticTools/VBoxContainer4/TrailColor/Control"]
+[node name="ColorPicker" type="ColorPickerButton" parent="physics/CanvasLayer/StaticTools/TextureRect4/TrailColor/Control"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -76.7623
-margin_top = 0.604736
-margin_right = 67.2379
-margin_bottom = 24.6047
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/VBoxContainer4/TrailColor"]
-margin_right = 65.0
-margin_bottom = 14.0
+margin_left = -78.3497
+margin_top = 1.39841
+margin_right = 65.6505
+margin_bottom = 25.3984
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1170,16 +1360,16 @@ __meta__ = {
 [connection signal="pressed" from="physics/CanvasLayer/DynamicTools/Speed Down" to="physics" method="_on_Speed_Down_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/Slider" to="physics/CanvasLayer/Camera2D" method="_on_Slider_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/Dynamis" to="physics/CanvasLayer/Camera2D" method="_on_Dynamis_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer/Add2" to="physics/CanvasLayer/Camera2D" method="_on_Add2_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer/Add2" to="gameplay" method="_on_Add2_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer/Add3" to="physics/CanvasLayer/Camera2D" method="_on_Add3_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer/Add3" to="gameplay" method="_on_Add3_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2/Add" to="physics" method="_on_Add_pressed"]
-[connection signal="toggled" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2/Add" to="physics" method="_on_Add_toggled"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer2/Subtract" to="physics" method="_on_Subtract_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer/CheckButton" to="physics" method="_on_CheckButton_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer2/CheckButton2" to="physics/Orbits" method="_on_CheckButton2_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer4/SetSpeed" to="gameplay" method="_on_SetSpeed_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/VBoxContainer2/HBoxContainer4/Reset" to="physics" method="_on_Button_pressed"]
-[connection signal="item_selected" from="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3/SpriteChanger/OptionButton" to="physics/CanvasLayer/StaticTools/VBoxContainer2/VBoxContainer3/SpriteChanger/OptionButton" method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4" to="physics/CanvasLayer/Camera2D" method="_on_Add2_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4" to="gameplay" method="_on_Add2_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect2/Add3" to="physics/CanvasLayer/Camera2D" method="_on_Add3_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect2/Add3" to="gameplay" method="_on_Add3_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add" to="physics" method="_on_Add_pressed"]
+[connection signal="toggled" from="physics/CanvasLayer/StaticTools/Add" to="physics" method="_on_Add_toggled"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Subtract" to="physics" method="_on_Subtract_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/SetSpeed" to="gameplay" method="_on_SetSpeed_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Reset" to="physics" method="_on_Button_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/TextureRect/CheckButton" to="physics" method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/StaticTools/TextureRect2/CheckButton2" to="physics" method="_on_CheckButton2_pressed"]
+[connection signal="item_selected" from="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger/OptionButton" to="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger/OptionButton" method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="physics/CanvasLayer/Static" to="physics/CanvasLayer/Camera2D" method="_on_Static_pressed"]
