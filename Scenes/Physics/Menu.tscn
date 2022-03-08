@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Planets.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Physics/OptionButton.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -29,18 +30,27 @@ PopupMenu/styles/panel = SubResource( 2 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0, 0, 0, 1 )
-
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0 )
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Control" type="Control"]
-margin_right = 102.0
-margin_bottom = 29.0
+margin_right = 178.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,16 +58,21 @@ __meta__ = {
 [node name="OptionButton" type="OptionButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 28.0
+margin_top = 13.0
+margin_right = -26.0
+margin_bottom = -12.0
 theme = SubResource( 3 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-text = "Planet"
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+text = "Planets"
+align = 1
+expand_icon = true
 items = [ "Planet", null, false, 1, null ]
 selected = 0
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

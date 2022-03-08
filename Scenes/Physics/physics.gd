@@ -166,10 +166,10 @@ func _on_Links_meta_clicked(meta):
 	pass # Replace with function body.
 
 func _on_Speed_Up_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/Velocity").get_text())
+	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect2/TextureRect3/Velocity").get_text())
 	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
-	#print(factor)
-	#print(planet)
+	print(factor)
+	print(planet)
 	#var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
 	var path = "Planets/%s"%planet
 	if get_node(path):
@@ -180,7 +180,7 @@ func _on_Speed_Up_pressed():
 	pass # Replace with function body.
 
 func _on_Speed_Down_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/Velocity").get_text())
+	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect2/TextureRect3/Velocity").get_text())
 	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
 	#print(factor)
 	#print(planet)
@@ -195,7 +195,7 @@ func _on_Speed_Down_pressed():
 
 
 func _on_MassI_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/Mass").get_text())
+	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect/TextureRect3/Mass").get_text())
 	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
 	#print(factor)
 	#print(planet)
@@ -209,7 +209,7 @@ func _on_MassI_pressed():
 
 
 func _on_MassD_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/Mass").get_text())
+	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect/TextureRect3/Mass").get_text())
 	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
 	#print(factor)
 	#print(planet)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Scenes/Physics/Orbits.gd" type="Script" id=1]
 [ext_resource path="res://New Assets/mercury.png" type="Texture" id=2]
@@ -34,6 +34,12 @@
 [ext_resource path="res://Assets/BUTTONS/Neon borders/Orbit visibility.png" type="Texture" id=32]
 [ext_resource path="res://Assets/BUTTONS/Neon borders/Stop and reset.png" type="Texture" id=33]
 [ext_resource path="res://Assets/BUTTONS/Neon borders/Common container.png" type="Texture" id=34]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/D.png" type="Texture" id=35]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Trail - .png" type="Texture" id=36]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/S.png" type="Texture" id=37]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Trail +.png" type="Texture" id=38]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/Rectangle 13.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Fonts/static/Oxanium-ExtraBold.ttf" type="DynamicFontData" id=40]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 48.0104
@@ -48,6 +54,12 @@ font_data = ExtResource( 5 )
 [sub_resource type="CircleShape2D" id=4]
 radius = 5.0
 
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 1
@@ -56,17 +68,35 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 21
-font_data = ExtResource( 5 )
+font_data = ExtResource( 40 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=16]
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 40 )
+
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.419608, 0.0627451, 0.0627451, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.121569, 0.0235294, 0.439216, 1 )
 
-[sub_resource type="Theme" id=13]
+[sub_resource type="Theme" id=9]
 PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
@@ -80,20 +110,20 @@ PopupMenu/icons/radio_checked = null
 PopupMenu/icons/radio_unchecked = null
 PopupMenu/icons/submenu = null
 PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = SubResource( 11 )
+PopupMenu/styles/hover = SubResource( 7 )
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 12 )
+PopupMenu/styles/panel = SubResource( 8 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.854902, 0.184314, 0.184314, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.854902, 0.184314, 0.184314, 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0, 0, 0, 0 )
 border_width_left = 1
 border_width_top = 1
@@ -574,159 +604,293 @@ targetPath = NodePath("../../Planets/Neptune")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="physics"]
 
-[node name="DynamicTools" type="Control" parent="physics/CanvasLayer"]
+[node name="DynamicTools" type="TextureRect" parent="physics/CanvasLayer"]
 anchor_left = 1.0
 anchor_top = 0.248
 anchor_right = 1.0
 anchor_bottom = 0.248
-margin_left = -246.218
-margin_top = -90.7528
-margin_right = 1.78186
-margin_bottom = 90.2472
+margin_left = -374.0
+margin_top = -90.8
+margin_right = -2.0
+margin_bottom = 172.2
+texture = ExtResource( 34 )
+expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="physics/CanvasLayer/DynamicTools"]
+[node name="ColorRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools"]
+visible = false
 margin_right = 248.0
 margin_bottom = 182.0
-color = Color( 1, 1, 1, 0.164706 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Velocity" type="LineEdit" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 103.364
-margin_top = 110.771
-margin_right = 185.364
-margin_bottom = 134.771
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Mass" type="LineEdit" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 102.0
-margin_top = 46.0
-margin_right = 186.0
-margin_bottom = 70.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Speed Up2" type="Button" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 14.3094
-margin_top = 136.965
-margin_right = 98.3094
-margin_bottom = 166.965
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/Speed Up2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Speed Up"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="factor_m" type="Label" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 13.341
-margin_top = 115.124
-margin_right = 96.341
-margin_bottom = 138.124
-text = "Factor"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="factor_v" type="Label" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 18.1353
-margin_top = 48.4293
-margin_right = 99.1353
-margin_bottom = 72.4293
-text = "Factor"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MassI" type="Button" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 13.4211
-margin_top = 74.3862
-margin_right = 97.4211
-margin_bottom = 104.386
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/MassI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Increase"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="MassD" type="Button" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 101.605
-margin_top = 74.1598
-margin_right = 185.604
-margin_bottom = 104.16
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/MassD"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Decrease"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Speed Down" type="Button" parent="physics/CanvasLayer/DynamicTools"]
-anchor_top = -0.00235708
-anchor_bottom = -0.00235708
-margin_left = 102.73
-margin_top = 137.992
-margin_right = 186.73
-margin_bottom = 167.992
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/Speed Down"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Speed Down"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Dynamic" parent="physics/CanvasLayer/DynamicTools" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -30.0002
-margin_right = 30.0002
-margin_bottom = 40.001
+margin_left = -125.0
+margin_top = 26.0
+margin_right = 126.0
+margin_bottom = 85.0
+
+[node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools"]
+margin_left = 52.5
+margin_top = 104.5
+margin_right = 172.5
+margin_bottom = 164.5
+texture = ExtResource( 22 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.25
+margin_right = -0.25
+text = "Mass"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
+margin_left = -0.563599
+margin_top = 51.7728
+margin_right = 74.4364
+margin_bottom = 99.7728
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MassI" type="TextureButton" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -9.5
+margin_right = 12.5
+margin_bottom = 9.5
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect/MassI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
+margin_left = 45.8728
+margin_top = 51.7728
+margin_right = 120.873
+margin_bottom = 99.7728
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MassD" type="TextureButton" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -7.0
+margin_right = 8.0
+margin_bottom = 7.0
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect2/MassD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "-"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
+margin_left = 13.0
+margin_top = 46.0
+margin_right = 106.0
+margin_bottom = 65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mass" type="LineEdit" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 53.0
+margin_top = -0.629959
+margin_right = 8.0
+margin_bottom = -0.629959
+custom_styles/normal = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect3"]
+margin_top = 1.0
+margin_right = 47.0
+margin_bottom = 20.0
+text = "Factor"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/DynamicTools"]
+margin_left = 192.0
+margin_top = 104.5
+margin_right = 312.0
+margin_bottom = 164.5
+texture = ExtResource( 23 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.25
+margin_right = -0.25
+text = "Speed"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect2"]
+margin_left = -0.563599
+margin_top = 51.7728
+margin_right = 74.4364
+margin_bottom = 99.7728
+texture = ExtResource( 38 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed Up2" type="TextureButton" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -9.5
+margin_right = 12.5
+margin_bottom = 9.5
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect/Speed Up2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect2"]
+margin_left = 45.8728
+margin_top = 51.7728
+margin_right = 120.873
+margin_bottom = 99.7728
+texture = ExtResource( 36 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed Down" type="TextureButton" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -9.5
+margin_right = 12.5
+margin_bottom = 9.5
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect2/Speed Down"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "-"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect2"]
+margin_left = 13.0
+margin_top = 46.0
+margin_right = 106.0
+margin_bottom = 65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect3"]
+margin_top = 1.0
+margin_right = 47.0
+margin_bottom = 20.0
+text = "Factor"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Velocity" type="LineEdit" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect3"]
+margin_left = 50.2202
+margin_top = 1.0
+margin_right = 98.2202
+margin_bottom = 20.0
+rect_min_size = Vector2( 48, 10 )
+custom_styles/normal = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Camera2D" type="Camera2D" parent="physics/CanvasLayer"]
 current = true
@@ -734,38 +898,37 @@ zoom = Vector2( 7, 7 )
 script = ExtResource( 7 )
 targetPath = NodePath("../SliderInfo")
 
-[node name="SliderInfo" type="Control" parent="physics/CanvasLayer"]
+[node name="SliderInfo" type="TextureRect" parent="physics/CanvasLayer"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -243.572
-margin_top = -360.151
-margin_right = -1.57019
-margin_bottom = -1.15082
+margin_left = -467.718
+margin_top = -294.419
+margin_right = 15.2817
+margin_bottom = 1.5813
+texture = ExtResource( 34 )
+expand = true
 script = ExtResource( 16 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="physics/CanvasLayer/SliderInfo"]
+[node name="ColorRect" type="TextureRect" parent="physics/CanvasLayer/SliderInfo"]
+visible = false
 modulate = Color( 0.632813, 0.632813, 0.632813, 0.2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="physics/CanvasLayer/SliderInfo"]
-position = Vector2( 122, 100 )
+position = Vector2( 350, 150 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="physics/CanvasLayer/SliderInfo"]
-margin_left = 15.0
-margin_top = 157.0
-margin_right = 231.0
-margin_bottom = 345.0
+margin_left = 58.2381
+margin_top = 87.7043
+margin_right = 244.238
+margin_bottom = 244.704
 custom_styles/normal = SubResource( 5 )
 bbcode_enabled = true
 __meta__ = {
@@ -773,17 +936,19 @@ __meta__ = {
 }
 
 [node name="Control" parent="physics/CanvasLayer/SliderInfo" instance=ExtResource( 17 )]
-margin_left = 89.0869
-margin_top = 4.02155
-margin_right = 149.086
-margin_bottom = 44.0216
+margin_left = 45.8591
+margin_top = 37.7027
+margin_right = 226.859
+margin_bottom = 78.7027
 
-[node name="Slider" type="Button" parent="physics/CanvasLayer"]
+[node name="Slider" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -94.0
-margin_top = 2.0
-margin_bottom = 43.0
+margin_top = 6.0
+margin_bottom = 47.0
+texture_normal = ExtResource( 39 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -800,13 +965,15 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Dynamis" type="Button" parent="physics/CanvasLayer"]
+[node name="Dynamis" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 0.86
 anchor_right = 0.86
-margin_left = -41.64
-margin_top = 2.0
-margin_right = 0.359985
-margin_bottom = 43.0
+margin_left = -81.64
+margin_top = -7.05946
+margin_right = -9.64001
+margin_bottom = 52.9405
+texture_normal = ExtResource( 35 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -911,15 +1078,14 @@ size_flags_horizontal = 3
 texture_normal = ExtResource( 22 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
-text = "Zoom"
+custom_fonts/font = SubResource( 6 )
+text = "ZOOM"
 align = 1
 valign = 1
 autowrap = true
@@ -933,10 +1099,10 @@ anchor_left = 0.318
 anchor_top = 0.595
 anchor_right = 0.318
 anchor_bottom = 0.595
-margin_left = -55.0824
-margin_top = -5.41079
-margin_right = 49.9176
-margin_bottom = 76.5892
+margin_left = -55.0468
+margin_top = -6.38556
+margin_right = 49.9532
+margin_bottom = 74.6144
 texture = ExtResource( 14 )
 expand = true
 stretch_mode = 1
@@ -945,12 +1111,14 @@ __meta__ = {
 }
 
 [node name="Add4" type="TextureButton" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 32.0
-margin_top = 23.0
-margin_right = -30.0
-margin_bottom = -25.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.5
+margin_top = -16.5
+margin_right = 21.5
+margin_bottom = 16.5
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 expand = true
@@ -961,7 +1129,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "+"
 align = 1
 valign = 1
@@ -976,10 +1144,10 @@ anchor_left = 0.398
 anchor_top = 0.641
 anchor_right = 0.398
 anchor_bottom = 0.641
-margin_left = -0.812546
-margin_top = -8.71238
-margin_right = 105.187
-margin_bottom = 71.2876
+margin_left = -2.25315
+margin_top = -9.7147
+margin_right = 105.747
+margin_bottom = 71.2853
 texture = ExtResource( 15 )
 expand = true
 stretch_mode = 1
@@ -988,12 +1156,14 @@ __meta__ = {
 }
 
 [node name="Add3" type="TextureButton" parent="physics/CanvasLayer/StaticTools/Add2/TextureRect2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = 21.0
-margin_right = -38.0
-margin_bottom = -22.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -19.0
+margin_right = 20.0
+margin_bottom = 19.0
 mouse_default_cursor_shape = 2
 expand = true
 __meta__ = {
@@ -1004,7 +1174,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -2.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "-"
 align = 1
 valign = 1
@@ -1030,7 +1200,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Add"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "+"
 align = 1
 valign = 1
@@ -1055,7 +1225,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Subtract"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "-"
 align = 1
 valign = 1
@@ -1066,10 +1236,10 @@ __meta__ = {
 }
 
 [node name="SetSpeed" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = -4.8165
-margin_top = 302.595
-margin_right = 143.184
-margin_bottom = 380.595
+margin_left = 184.761
+margin_top = 74.9299
+margin_right = 375.761
+margin_bottom = 173.93
 rect_min_size = Vector2( 135, 60 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 33 )
@@ -1086,7 +1256,8 @@ margin_left = 24.0
 margin_top = 14.0
 margin_right = -24.0
 margin_bottom = -14.0
-text = "Stop Moving Background"
+custom_fonts/font = SubResource( 19 )
+text = "STOP MOVING BACKGROUND"
 align = 1
 valign = 1
 autowrap = true
@@ -1095,22 +1266,24 @@ __meta__ = {
 }
 
 [node name="Reset" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 126.659
-margin_top = 306.476
-margin_right = 266.659
-margin_bottom = 377.476
+margin_left = 185.799
+margin_top = 176.82
+margin_right = 385.799
+margin_bottom = 275.82
 rect_min_size = Vector2( 135, 60 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 33 )
 expand = true
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/Reset"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Reset"
+custom_fonts/font = SubResource( 20 )
+text = "RESET"
 align = 1
 valign = 1
 __meta__ = {
@@ -1118,10 +1291,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 64.0
-margin_top = 122.0
-margin_right = 181.0
-margin_bottom = 207.0
+margin_left = 42.4183
+margin_top = 105.0
+margin_right = 201.418
+margin_bottom = 203.0
 texture = ExtResource( 23 )
 expand = true
 __meta__ = {
@@ -1130,13 +1303,16 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 19.8108
-margin_right = -19.0
-margin_bottom = -21.1892
-text = "Trail Visibility"
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -28.5
+margin_right = 48.0
+margin_bottom = 28.5
+custom_fonts/font = SubResource( 15 )
+text = "TRAIL VISIBLITY"
 align = 1
 valign = 1
 autowrap = true
@@ -1147,8 +1323,8 @@ __meta__ = {
 [node name="CheckButton" type="TextureButton" parent="physics/CanvasLayer/StaticTools/TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 45.0
-margin_bottom = 23.0
+margin_top = 59.8492
+margin_bottom = 37.8492
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 30 )
 expand = true
@@ -1160,7 +1336,8 @@ __meta__ = {
 [node name="Label2" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect/CheckButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Off"
+custom_fonts/font = SubResource( 16 )
+text = "OFF"
 align = 1
 valign = 1
 __meta__ = {
@@ -1168,10 +1345,10 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 62.0
-margin_top = 210.0
-margin_right = 181.0
-margin_bottom = 286.0
+margin_left = 49.5274
+margin_top = 219.8
+margin_right = 197.527
+margin_bottom = 295.8
 texture = ExtResource( 32 )
 expand = true
 __meta__ = {
@@ -1186,7 +1363,8 @@ margin_left = 20.0
 margin_top = 18.0
 margin_right = -19.0
 margin_bottom = -19.0
-text = "Orbit Visibility"
+custom_fonts/font = SubResource( 17 )
+text = "ORBIT VISIBILITY"
 align = 1
 valign = 1
 autowrap = true
@@ -1210,7 +1388,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="physics/CanvasLayer/StaticTools/TextureRect2/CheckButton2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Off"
+custom_fonts/font = SubResource( 18 )
+text = "OFF"
 align = 1
 valign = 1
 __meta__ = {
@@ -1245,10 +1424,10 @@ anchor_left = 0.196
 anchor_top = 0.733
 anchor_right = 0.85
 anchor_bottom = 0.875
-margin_left = 0.0405769
-margin_top = -0.0464935
-margin_right = -0.117432
-margin_bottom = -0.120499
+margin_left = -20.4668
+margin_top = -8.52657
+margin_right = 8.37518
+margin_bottom = 9.39944
 
 [node name="OptionButton" type="OptionButton" parent="physics/CanvasLayer/StaticTools/TextureRect3/SpriteChanger"]
 anchor_left = 0.173
@@ -1259,11 +1438,11 @@ margin_left = 0.0789986
 margin_top = 0.112999
 margin_right = 0.0289917
 margin_bottom = 0.0389938
-theme = SubResource( 13 )
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/normal = SubResource( 16 )
-text = "   Sprites"
+theme = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "Sprites"
 items = [ "Sprites", null, false, 0, null ]
 selected = 0
 script = ExtResource( 21 )
@@ -1294,19 +1473,20 @@ anchor_top = 0.807
 anchor_right = 1.957
 anchor_bottom = 0.94
 margin_left = -0.0889893
-margin_top = -0.200012
-margin_right = -0.0889893
-margin_bottom = -6.10352e-05
+margin_top = -0.199982
+margin_right = -0.0889282
+margin_bottom = 21.0
 texture = ExtResource( 34 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="TrailColor" type="Control" parent="physics/CanvasLayer/StaticTools/TextureRect4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 6.10352e-05
+margin_bottom = -25.0
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1315,31 +1495,33 @@ __meta__ = {
 [node name="Control" parent="physics/CanvasLayer/StaticTools/TextureRect4/TrailColor" instance=ExtResource( 17 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 61.5559
-margin_top = 17.937
-margin_right = -49.4441
-margin_bottom = -43.063
+margin_left = 46.0
+margin_top = 10.0
+margin_right = -33.0001
+margin_bottom = -20.0
 
 [node name="ColorPicker" type="ColorPickerButton" parent="physics/CanvasLayer/StaticTools/TextureRect4/TrailColor/Control"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -78.3497
-margin_top = 1.39841
-margin_right = 65.6505
-margin_bottom = 25.3984
+margin_left = -74.3812
+margin_top = -2.5701
+margin_right = 69.619
+margin_bottom = 21.4299
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Static" type="Button" parent="physics/CanvasLayer"]
+[node name="Static" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 0.905
 anchor_right = 0.905
-margin_left = -42.72
+margin_left = -58.72
 margin_top = 2.0
-margin_right = 0.279968
-margin_bottom = 43.0
+margin_right = 0.280029
+margin_bottom = 49.0
+texture_normal = ExtResource( 37 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1354,10 +1536,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/Speed Up2" to="physics" method="_on_Speed_Up_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/MassI" to="physics" method="_on_MassI_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/MassD" to="physics" method="_on_MassD_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/Speed Down" to="physics" method="_on_Speed_Down_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect/MassI" to="physics" method="_on_MassI_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect2/MassD" to="physics" method="_on_MassD_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect/Speed Up2" to="physics" method="_on_Speed_Up_pressed"]
+[connection signal="pressed" from="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect2/Speed Down" to="physics" method="_on_Speed_Down_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/Slider" to="physics/CanvasLayer/Camera2D" method="_on_Slider_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/Dynamis" to="physics/CanvasLayer/Camera2D" method="_on_Dynamis_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4" to="physics/CanvasLayer/Camera2D" method="_on_Add2_pressed"]
