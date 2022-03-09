@@ -19,15 +19,6 @@ func _physics_process(delta):
 	var name = "res://New Assets/%s.png"%planet
 	$Sprite.texture = load(name)
 	var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
-	var diameter = 175
-	if ($Sprite.texture):
-		#var xScale = float(xSize)/$Sprite.texture.get_width()
-		var scale = float(diameter)*2/$Sprite.texture.get_height()
-		#print(xScale)
-		#print(yScale)
-		$Sprite.scale.x = scale*0.5
-		$Sprite.scale.y = scale*0.5
-		pass
 	var namen = "[center]Name: [u]%s[/u][/center]"%format
 	var path = "Planets/%s"%format
 	var dist
@@ -48,7 +39,6 @@ func _physics_process(delta):
 			planet_mass = "Mass: %d"%mass
 	if dist and namen and velocity and planet_mass:
 		$RichTextLabel.bbcode_text = namen+"\n"+dist+"\n"+velocity+"\n"+planet_mass
-		print()
 	else:
 		$RichTextLabel.text = "Planet not available in system"
 
