@@ -48,3 +48,7 @@ func _on_SetSpeed_pressed():
 	else:
 		get_node("TextureRect").scroll_speed = 0.2
 	pass # Replace with function body.
+
+
+func _on_Home_Button_pressed():
+	get_tree().change_scene("res://Scenes/Interface/Home UI.tscn") # Replace with function body.

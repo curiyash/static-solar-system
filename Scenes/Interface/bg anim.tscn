@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/Sprites/damc26r-5fa4f72e-71bd-4997-af54-9c7cc32d5290.png" type="Texture" id=1]
+[ext_resource path="res://Assets/BG images/Infi img.jpg" type="Texture" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1

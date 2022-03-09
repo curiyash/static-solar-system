@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/Sprites/saturn.png" type="Texture" id=1]
-[ext_resource path="res://assets/BG images/black.jpg" type="Texture" id=2]
-[ext_resource path="res://assets/Sprites/mercury.png" type="Texture" id=3]
-[ext_resource path="res://SCRIPTS/b1.gd" type="Script" id=4]
-[ext_resource path="res://SCRIPTS/b2.gd" type="Script" id=5]
-[ext_resource path="res://SCENES/gameplay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://New Assets/neptune.png" type="Texture" id=1]
+[ext_resource path="res://Assets/BG images/black.jpg" type="Texture" id=2]
+[ext_resource path="res://New Assets/earth.png" type="Texture" id=3]
+[ext_resource path="res://SCRIPTS/Interface/b1.gd" type="Script" id=4]
+[ext_resource path="res://SCRIPTS/Interface/b2.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Interface/gameplay.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.5
@@ -23,9 +23,6 @@ radius = 56.1427
 
 [node name="Node2D" type="Node2D"]
 
-[node name="gameplay" parent="." instance=ExtResource( 6 )]
-position = Vector2( -2, 0 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 margin_top = -1.0
@@ -37,6 +34,8 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="gameplay" parent="." instance=ExtResource( 6 )]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 391, 312 )

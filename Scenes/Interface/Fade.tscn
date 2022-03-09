@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/Fonts/Elektra.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Elektra.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
-[ext_resource path="res://SCRIPTS/Fade.gd" type="Script" id=4]
-[ext_resource path="res://SCENES/Particle_Animation.tscn" type="PackedScene" id=5]
-[ext_resource path="res://SCENES/vortex.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCRIPTS/Interface/Fade.gd" type="Script" id=4]
+[ext_resource path="res://SCENES/Interface/Particle_Animation.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SCENES/Interface/vortex.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "NewAnimation"
