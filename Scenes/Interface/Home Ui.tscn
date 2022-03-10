@@ -193,6 +193,9 @@ custom_constants/shadow_as_outline = 5
 text = " SPACE GAME"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="m" type="TextureButton" parent="."]
 margin_left = 833.168
