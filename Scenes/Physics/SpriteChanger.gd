@@ -21,19 +21,27 @@ func _physics_process(delta):
 	sprite = $OptionButton.sprite_name
 	var name = "res://Assets/Sprites/%s.png"%sprite
 	var tSprite = sprite!="Sprites" and sprite!=prev_sprite
+	var node = get_parent()
 	if tSprite:
-		$Control2/Sprite.texture = load(name)
+		node.get_node("Control2/Sprite").texture = load(name)
 		prev_sprite = $OptionButton.sprite_name
+		var spriteX = float(node.get_node("Control2").rect_size.x)/2
+		var spriteY = float(node.get_node("Control2").rect_size.y)/2
+		var dew = Vector2(spriteX, spriteY)
+		node.get_node("Control2/Sprite").set_position(dew)
 		print("S")
 		print(prev_sprite)
+	if sprite=="Sprites":
+		node.get_node("Control2/Sprite").texture = null
+	else:
 	#if sprite!="":
 	#	$Sprite.texture = load(name)
-	if planet!="Planet" and planet!="":
-		if planet!=prev_planet and planet_path.get_node(planet) or (tSprite):
-			planet_path.get_node(planet).get_node("CollisionShape2D/Sprite").texture = load(name)
-			prev_planet = planet
-			prev_sprite = $OptionButton.sprite_name
-			print(prev_sprite)
+		if planet!="Planet" and planet!="":
+			if planet!=prev_planet and planet_path.get_node(planet) or (tSprite):
+				planet_path.get_node(planet).get_node("CollisionShape2D/Sprite").texture = load(name)
+				prev_planet = planet
+				prev_sprite = $OptionButton.sprite_name
+				print(prev_sprite)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

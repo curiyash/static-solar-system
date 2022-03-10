@@ -4,8 +4,8 @@ var prev_zoom
 
 func _ready():
 	prev_zoom = get_node("/root/Godot physics/physics/CanvasLayer/Camera2D").get_zoom().x
-	connect("mouse_entered", self, "_mouse_entered")
-	connect("mouse_exited", self, "_mouse_exited")
+	#connect("mouse_entered", self, "_mouse_entered")
+	#connect("mouse_exited", self, "_mouse_exited")
 	$ColorRect/Label.hide()
 
 func Vector2Val(vector):
@@ -36,7 +36,6 @@ func _physics_process(delta):
 			font.size = font.size*zoom/prev_zoom
 			$ColorRect/Label.add_font_override("font", font)
 			prev_zoom = zoom
-			print(prev_zoom)
 	if entered:
 		_on_mouse_entered()
 		get_node("ColorRect").set_frame_color(Color(255, 255, 255, 0.2))

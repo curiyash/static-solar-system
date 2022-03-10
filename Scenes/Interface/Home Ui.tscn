@@ -16,12 +16,16 @@
 [ext_resource path="res://Assets/music/OutThere.ogg" type="AudioStream" id=19]
 [ext_resource path="res://SCRIPTS/Interface/shooting stars.gd" type="Script" id=20]
 
+[sub_resource type="DynamicFont" id=4]
+size = 80
+font_data = ExtResource( 11 )
+
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
 length = 7.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("moon anim/moon:position")
+tracks/0/path = NodePath("CanvasLayer/moon anim/moon:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -33,7 +37,7 @@ tracks/0/keys = {
 "values": [ Vector2( 70.4449, 221.403 ), Vector2( 90.445, 221.403 ), Vector2( 100.445, 221.403 ), Vector2( 110.445, 221.403 ), Vector2( 90.445, 221.403 ), Vector2( 70.445, 221.403 ), Vector2( 50.445, 221.403 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("moon anim/earth:rotation_degrees")
+tracks/1/path = NodePath("CanvasLayer/moon anim/earth:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -45,7 +49,7 @@ tracks/1/keys = {
 "values": [ 0.0, 45.0, 90.0, 135.0, 185.0, 230.0, 275.0, 345.0, 360.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("moon anim/Mercury:rotation_degrees")
+tracks/2/path = NodePath("CanvasLayer/moon anim/Mercury:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -57,7 +61,7 @@ tracks/2/keys = {
 "values": [ 0.0, 30.0, 0.0, -20.0, 0.0, 20.0, 0.0, -10.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("moon anim/Saturn:flip_h")
+tracks/3/path = NodePath("CanvasLayer/moon anim/Saturn:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -76,10 +80,6 @@ font_data = ExtResource( 4 )
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 80
-font_data = ExtResource( 11 )
-
 [node name="shooting stars" type="Node2D"]
 script = ExtResource( 20 )
 
@@ -97,55 +97,105 @@ __meta__ = {
 
 [node name="gameplay" parent="." instance=ExtResource( 2 )]
 
-[node name="Node2D" parent="." instance=ExtResource( 10 )]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 833.168, -7.32581 )
+scale = Vector2( 0.236443, 0.213825 )
+stream = ExtResource( 19 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
+position = Vector2( 510, 300 )
+current = true
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 10 )]
 position = Vector2( 1.41425, -5.65686 )
 
-[node name="moon anim" type="AnimationPlayer" parent="."]
+[node name="RichTextLabel" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -366.5
+margin_right = 366.5
+margin_bottom = 251.0
+size_flags_stretch_ratio = 5.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_constants/shadow_as_outline = 5
+text = " SPACE GAME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -114.133
+margin_top = 26.1626
+margin_right = 168.867
+margin_bottom = 283.163
+rect_scale = Vector2( 0.352339, 0.284997 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="moon anim" type="AnimationPlayer" parent="CanvasLayer"]
 autoplay = "New Anim"
 "anims/New Anim" = SubResource( 1 )
 
-[node name="moon" type="Sprite" parent="moon anim"]
+[node name="moon" type="Sprite" parent="CanvasLayer/moon anim"]
 visible = false
 position = Vector2( 70.4449, 221.403 )
 scale = Vector2( 0.385637, 0.353971 )
 texture = ExtResource( 14 )
 
-[node name="earth" type="Sprite" parent="moon anim"]
+[node name="earth" type="Sprite" parent="CanvasLayer/moon anim"]
 visible = false
 position = Vector2( 342.942, 262.091 )
 scale = Vector2( 0.523585, 0.503811 )
 texture = ExtResource( 13 )
 
-[node name="Saturn" type="Sprite" parent="moon anim"]
+[node name="Saturn" type="Sprite" parent="CanvasLayer/moon anim"]
 visible = false
 light_mask = 32768
 position = Vector2( 921.581, 188.566 )
 scale = Vector2( 0.376123, 0.353971 )
 texture = ExtResource( 15 )
 
-[node name="Mercury" type="Sprite" parent="moon anim"]
+[node name="Mercury" type="Sprite" parent="CanvasLayer/moon anim"]
 visible = false
 position = Vector2( 682.212, 301.265 )
 scale = Vector2( 0.376123, 0.37062 )
 texture = ExtResource( 15 )
 
-[node name="Node2D" parent="moon anim" instance=ExtResource( 16 )]
+[node name="Node2D" parent="CanvasLayer/moon anim" instance=ExtResource( 16 )]
 position = Vector2( -26.8701, 0 )
 
-[node name="Our" type="TextureButton" parent="."]
-margin_left = 333.0
-margin_top = 465.0
-margin_right = 711.0
-margin_bottom = 570.0
+[node name="Our" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -189.0
+margin_top = -105.0
+margin_right = 189.0
 rect_pivot_offset = Vector2( 1, 1 )
 size_flags_stretch_ratio = 2.15
 texture_normal = ExtResource( 1 )
 expand = true
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Our solar system" type="Label" parent="Our"]
+[node name="Our solar system" type="Label" parent="CanvasLayer/Our"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( 3 )
@@ -161,47 +211,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 932.0
-margin_top = 11.5676
-margin_right = 1215.0
-margin_bottom = 268.568
-rect_scale = Vector2( 0.352339, 0.284997 )
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 8 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="Label" parent="."]
-anchor_left = 5.0
-anchor_top = 5.0
-anchor_right = 5.0
-anchor_bottom = 5.0
-margin_left = 166.0
-margin_top = 61.0
-margin_right = 899.0
-margin_bottom = 312.0
-size_flags_stretch_ratio = 5.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 5
-custom_constants/shadow_offset_y = 5
-custom_constants/shadow_as_outline = 5
-text = " SPACE GAME"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="m" type="TextureButton" parent="."]
-margin_left = 833.168
-margin_top = -7.32581
-margin_right = 1333.17
-margin_bottom = 492.674
+[node name="m" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -209.835
+margin_top = 2.37842
+margin_right = 290.167
+margin_bottom = 502.378
 rect_min_size = Vector2( 50, 80 )
 rect_scale = Vector2( 0.236443, 0.213825 )
 texture_normal = ExtResource( 6 )
@@ -212,11 +228,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 833.168, -7.32581 )
-scale = Vector2( 0.236443, 0.213825 )
-stream = ExtResource( 19 )
-
-[connection signal="pressed" from="Our" to="." method="_on_Our_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="m" to="." method="_on_m_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Our" to="." method="_on_Our_pressed"]
+[connection signal="pressed" from="CanvasLayer/m" to="." method="_on_m_pressed"]

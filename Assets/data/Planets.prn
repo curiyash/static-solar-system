@@ -1,0 +1,9 @@
+Planet,Length of year (In Earth Days),Distance from Sun(million km),Namesake,Moons,Planet type,one way light time to the sun(in min)
+Mercury,88,68.981,Roman God of Speed,0,Terrestrial,3.835432
+Venus,225,107.95,Roman Goddess of Love,0,Terrestrial,6.001464
+Earth,365.25,148.44,"Variation of ""The Ground""",1,Terrestrial,8.252294
+Mars,687,218.67,Roman God of War,2,Terrestrial,12.086229
+Jupiter,4333,745.3,King of the Roman Gods,79,Gas Giant,41.41797
+Saturn,"10,759",1479.5,Father of Jupiter,62,Gas Giant,82.385078
+Uranus,30687,2948.4,Greek God of The Sky,27,Ice Giant,163.952306
+Neptune,60190,4474.6,Roman God of The Sea,14,Ice Giant,248.828376
