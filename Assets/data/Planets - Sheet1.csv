@@ -1,0 +1,9 @@
+Planet,Length of year (In Earth Days),Distance from Sun(million km),Namesake,Moons,Planet type,Mass (1024 kg),diameter (km),Mean density (kg/m3),gravity (m/s2),Escape velocity (km/s),Planetary ring system,Length of day (hrs),Distance from Sun (106 km),Mean Temperature (C),Rotation Period (hours,Perihelion (10^6 km),Aphelion (106 km),Atmosphere
+Mercury,88,68.981,Roman God of Speed,0,Terrestrial,0.3301,4879,5429,3.7,4.3,No,4222.6,57.9,167,1407.6,46,69.8,minimal
+Venus,225,107.95,Roman Goddess of Love,0,Terrestrial,4.87,"12,104",5243,8.9,10.4,No,2802,108.2,464,-5832.5,107.5,108.9,"CO2, N2"
+Earth,365.25,148.44,"Variation of ""The Ground""",1,Terrestrial,5.97,"12,756",5514,9.8,11.2,No,24,149.6,15,23.9,147.1,152.1,"N2, O2, Ar"
+Mars,687,218.67,Roman God of War,2,Terrestrial,0.642,6792,3934,3.7,5,No,24.7,228,-65,24.6,206.7,249.3,"CO2, N2, Ar"
+Jupiter,4333,745.3,King of the Roman Gods,79,Gas Giant,1898,"142,984",1326,23.1,59.5,yes,9.9,778.5,-110,9.9,740.6,816.4,"H2, He"
+Saturn,"10,759",1479.5,Father of Jupiter,62,Gas Giant,568,"120,536",687,9,35.5,yes,10.7,1432,-140,10.7,1357.6,1506.5,"H2, He"
+Uranus,30687,2948.4,Greek God of The Sky,27,Ice Giant,86.8,"51,118",1270,8.7,21.3,yes,17.2,2867,-195,-17.2,2732.7,3001.4,"H2, He, CH4"
+Neptune,60190,4474.6,Roman God of The Sea,14,Ice Giant,102,"49,528",1638,11,23.5,yes,16.1,4515,-200,16.1,4471.1,4558.9,"H2, He, CH4"

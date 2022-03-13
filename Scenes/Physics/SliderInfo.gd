@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var path = "res://Assets/data/Planets.prn"
+var path = "res://Assets/data/Planets - Sheet1.csv"
 var planets
 func _ready():
 	var data = Get_data()
@@ -40,11 +40,25 @@ func showItems(data):
 			var namesake = list[3]
 			var moon = list[4]
 			var type = list[5]
+			var mass = list[6]
+			var diameter = list[7]
+			var surfaceGravity = list[9]
+			var rings = list[11]
+			var temp = list[12]
+			var peri = list[14]
+			var apo = list[15]
 			info.append(length)
 			info.append(dist)
 			info.append(namesake)
 			info.append(moon)
 			info.append(type)
+			info.append(mass)
+			info.append(diameter)
+			info.append(surfaceGravity) #7
+			info.append(rings) #8
+			info.append(temp) #9
+			info.append(peri) #10
+			info.append(apo) #11
 			planets[name] = info
 		count+=1
 	#	item_copy.text = str(entity[0]) + " " + str(entity[1]) + " " + str(entity[2]) + " " + str(entity[3])
@@ -75,15 +89,29 @@ func _physics_process(delta):
 	var moons
 	var type
 	var namen
+	var mass
+	var dia
+	var rings
+	var temp
+	var peri
+	var apo
+	var surfaceGravity
 	if format in planets.keys():
 		planet_obj = planets[format]
-		namen = "[center]Name: [u]%s[/u][/center]"%format
-		path = "Planets/%s"%format
-		year = "Length of year: %s"%planet_obj[0]
-		dist = "Distance from Sun: %s"%planet_obj[1]
-		namesake = "Namesake: %s"%planet_obj[2]
-		moons = "Moons: %s"%planet_obj[3]
-		type = "Type: %s"%planet_obj[4]
+		namen = "[center]Name: [u]%s[/u][/center]\n"%format
+		path = "Planets/%s\n"%format
+		namesake = "Namesake: %s\n"%planet_obj[2]
+		type = "Type: %s\n"%planet_obj[4]
+		mass = "Mass (in 10 [superscript]24[/superscript] kg): %s\n"%planet_obj[5]
+		dia = "Diameter (in km): %s\n"%planet_obj[6]
+		surfaceGravity = "Surface Gravity (in m/s [sup] 2 [/sup] ): %s\n"%planet_obj[7]
+		temp = "Temp (in °C): %s\n"%planet_obj[9]
+		year = "Length of year: %s\n"%planet_obj[0]
+		dist = "Distance from Sun: %s\n"%planet_obj[1]
+		peri = "Perihelion (in 10 [sup] 6 [/sup] km): %s\n"%planet_obj[10]
+		apo = "Aphelion (in 10 [sup] 6 [/sup] km): %s\n"%planet_obj[11]
+		moons = "Moons: %s\n"%planet_obj[3]
+		rings = "Lord of the Rings?: %s"%planet_obj[8]
 	if ($Control2/Sprite.texture):
 		#var xScale = float(xSize)/$Control2/Sprite.texture.get_width()
 		var scale = float(diameter)*2/$Control2/Sprite.texture.get_height()
@@ -97,7 +125,8 @@ func _physics_process(delta):
 		$Control2/Sprite.set_position(sprite)
 		pass
 	if format in planets.keys():
-		$RichTextLabel.bbcode_text = "[url=https://en.wikipedia.org/wiki/Mars]%s[/url]"%namen+"\n"+year+"\n"+dist+"\n"+namesake+"\n"+moons+"\n"+type
+		$RichTextLabel.bbcode_text = "[url=https://en.wikipedia.org/wiki/Mars]%s[/url]"%namen
+		$RichTextLabel.bbcode_text += namesake+type+mass+dia+surfaceGravity+temp+year+dist+peri+apo+moons+rings
 	else:
 		$RichTextLabel.text = "Planet not available in system"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Scenes/Physics/Orbits.gd" type="Script" id=1]
 [ext_resource path="res://New Assets/mercury.png" type="Texture" id=2]
@@ -42,6 +42,8 @@
 [ext_resource path="res://Assets/Fonts/static/Oxanium-ExtraBold.ttf" type="DynamicFontData" id=40]
 [ext_resource path="res://Assets/BUTTONS/Rectangle 11.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Fonts/oxanium/Oxanium-Bold.ttf" type="DynamicFontData" id=42]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/SPEED.png" type="Texture" id=43]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/MASS.png" type="Texture" id=44]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 48.0104
@@ -646,18 +648,17 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="physics"]
 
 [node name="DynamicTools" type="TextureRect" parent="physics/CanvasLayer"]
-anchor_left = 0.309
+anchor_left = 0.022
 anchor_top = 0.671
-anchor_right = 0.672
-anchor_bottom = 0.999
-margin_left = -0.0345459
-margin_top = -0.073761
-margin_right = 0.253418
-margin_bottom = 0.126221
+anchor_right = 0.385
+anchor_bottom = 1.0
+margin_left = 4.01875
+margin_top = 9.08176
+margin_right = -87.6933
+margin_bottom = -11.3182
 texture = ExtResource( 34 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -672,21 +673,20 @@ __meta__ = {
 [node name="Dynamic" parent="physics/CanvasLayer/DynamicTools" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -123.0
+margin_left = -104.0
 margin_top = 26.0
-margin_right = 128.0
-margin_bottom = 67.0
+margin_right = 106.0
+margin_bottom = 58.0
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 52.5
-margin_top = 67.0822
-margin_right = 172.5
-margin_bottom = 127.082
+margin_left = 28.4813
+margin_top = 54.8232
+margin_right = 148.481
+margin_bottom = 107.823
 theme = SubResource( 6 )
 texture = ExtResource( 22 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -704,10 +704,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
-margin_left = -0.563599
-margin_top = 51.7728
-margin_right = 74.4364
-margin_bottom = 99.7728
+margin_top = 52.0
+margin_right = 74.0
+margin_bottom = 100.0
 texture = ExtResource( 14 )
 expand = true
 __meta__ = {
@@ -725,7 +724,6 @@ margin_right = 12.5
 margin_bottom = 9.5
 expand = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -741,10 +739,10 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
-margin_left = 45.8728
-margin_top = 51.7728
-margin_right = 120.873
-margin_bottom = 99.7728
+margin_left = 46.0
+margin_top = 52.0
+margin_right = 120.0
+margin_bottom = 100.0
 texture = ExtResource( 15 )
 expand = true
 __meta__ = {
@@ -778,30 +776,35 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect"]
-margin_left = 13.0
-margin_top = 46.0
-margin_right = 106.0
-margin_bottom = 65.0
+margin_top = 27.0
+margin_right = 120.0
+margin_bottom = 78.0
+texture = ExtResource( 44 )
+expand = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Mass" type="LineEdit" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect3"]
-anchor_right = 1.0
+anchor_left = 0.524
+anchor_right = 1.04
 anchor_bottom = 1.0
-margin_left = 53.0
-margin_top = -0.629959
-margin_right = 8.0
-margin_bottom = -0.629959
+margin_left = 7.12
+margin_top = 16.0
+margin_right = 13.2
+margin_bottom = -14.0
+rect_scale = Vector2( 0.5, 1 )
 custom_styles/normal = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect/TextureRect3"]
-margin_top = 1.0
-margin_right = 47.0
-margin_bottom = 20.0
+margin_left = 17.4847
+margin_top = 16.7418
+margin_right = 67.4847
+margin_bottom = 35.7418
 text = "Factor"
 align = 1
 valign = 1
@@ -810,15 +813,14 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/DynamicTools"]
-margin_left = 183.091
-margin_top = 70.6458
-margin_right = 303.091
-margin_bottom = 130.646
+margin_left = 130.563
+margin_top = 55.7593
+margin_right = 251.563
+margin_bottom = 107.759
 theme = SubResource( 9 )
 texture = ExtResource( 23 )
 expand = true
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -836,10 +838,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect2"]
-margin_left = -0.563599
-margin_top = 51.7728
-margin_right = 74.4364
-margin_bottom = 99.7728
+margin_top = 52.0
+margin_right = 74.0
+margin_bottom = 100.0
 texture = ExtResource( 38 )
 expand = true
 __meta__ = {
@@ -908,18 +909,21 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="physics/CanvasLayer/DynamicTools/TextureRect2"]
-margin_left = 13.0
-margin_top = 46.0
-margin_right = 106.0
-margin_bottom = 65.0
+margin_top = 27.0
+margin_right = 121.0
+margin_bottom = 78.0
+texture = ExtResource( 43 )
+expand = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect3"]
-margin_top = 1.0
-margin_right = 47.0
-margin_bottom = 20.0
+margin_left = 16.5979
+margin_top = 16.7194
+margin_right = 66.5979
+margin_bottom = 35.7194
 text = "Factor"
 align = 1
 valign = 1
@@ -928,11 +932,11 @@ __meta__ = {
 }
 
 [node name="Velocity" type="LineEdit" parent="physics/CanvasLayer/DynamicTools/TextureRect2/TextureRect3"]
-margin_left = 50.2202
-margin_top = 1.0
-margin_right = 98.2202
-margin_bottom = 20.0
-rect_min_size = Vector2( 48, 10 )
+margin_left = 70.0
+margin_top = 15.0
+margin_right = 142.0
+margin_bottom = 36.0
+rect_scale = Vector2( 0.5, 1 )
 custom_styles/normal = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1010,10 +1014,10 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Slider" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -619.0
-margin_top = 159.65
-margin_right = -514.0
-margin_bottom = 205.65
+margin_left = -961.326
+margin_top = 43.2099
+margin_right = -856.326
+margin_bottom = 89.2099
 theme = SubResource( 13 )
 texture_normal = ExtResource( 39 )
 expand = true
@@ -1036,10 +1040,10 @@ __meta__ = {
 [node name="Dynamis" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 0.86
 anchor_right = 0.86
-margin_left = -494.374
-margin_top = 55.0
-margin_right = -322.374
-margin_bottom = 115.0
+margin_left = -111.977
+margin_top = 747.089
+margin_right = 60.0228
+margin_bottom = 807.089
 theme = SubResource( 15 )
 texture_normal = ExtResource( 35 )
 expand = true
@@ -1062,7 +1066,9 @@ __meta__ = {
 process_priority = 1
 anchor_right = 0.271
 anchor_bottom = 1.0
-margin_right = -0.504028
+margin_top = 3.34718
+margin_right = -0.503998
+margin_bottom = -307.653
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1139,10 +1145,10 @@ __meta__ = {
 }
 
 [node name="Add2" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 32.0
-margin_top = 15.0
-margin_right = 207.0
-margin_bottom = 96.0
+margin_left = -10.4496
+margin_top = 179.816
+margin_right = 164.55
+margin_bottom = 260.816
 size_flags_horizontal = 3
 texture_normal = ExtResource( 22 )
 expand = true
@@ -1254,10 +1260,10 @@ __meta__ = {
 }
 
 [node name="Add" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 50.5019
-margin_top = 336.708
-margin_right = 112.502
-margin_bottom = 378.708
+margin_left = 25.275
+margin_top = 150.029
+margin_right = 87.2751
+margin_bottom = 192.029
 size_flags_horizontal = 3
 texture_normal = ExtResource( 33 )
 expand = true
@@ -1279,10 +1285,10 @@ __meta__ = {
 }
 
 [node name="Subtract" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 114.871
-margin_top = 333.786
-margin_right = 176.871
-margin_bottom = 375.786
+margin_left = 77.0335
+margin_top = 148.084
+margin_right = 139.034
+margin_bottom = 190.084
 size_flags_horizontal = 3
 texture_normal = ExtResource( 33 )
 expand = true
@@ -1305,16 +1311,17 @@ __meta__ = {
 }
 
 [node name="SetSpeed" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 184.761
-margin_top = 74.9299
-margin_right = 375.761
-margin_bottom = 173.93
+margin_left = 153.128
+margin_top = 190.974
+margin_right = 344.128
+margin_bottom = 289.974
 rect_min_size = Vector2( 135, 60 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 33 )
 expand = true
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="ScrollSpeed" type="Label" parent="physics/CanvasLayer/StaticTools/SetSpeed"]
@@ -1334,10 +1341,10 @@ __meta__ = {
 }
 
 [node name="Reset" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 202.891
-margin_top = 294.599
-margin_right = 337.891
-margin_bottom = 354.599
+margin_left = 165.458
+margin_top = 136.927
+margin_right = 300.458
+margin_bottom = 196.927
 rect_min_size = Vector2( 135, 60 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 33 )
@@ -1359,10 +1366,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 42.4183
-margin_top = 105.0
-margin_right = 201.418
-margin_bottom = 203.0
+margin_left = 169.796
+margin_top = 272.757
+margin_right = 328.795
+margin_bottom = 370.757
 texture = ExtResource( 23 )
 expand = true
 __meta__ = {
@@ -1413,10 +1420,10 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-margin_left = 49.5274
-margin_top = 219.8
-margin_right = 197.527
-margin_bottom = 295.8
+margin_left = 9.58621
+margin_top = 292.533
+margin_right = 157.586
+margin_bottom = 368.533
 texture = ExtResource( 32 )
 expand = true
 __meta__ = {
@@ -1465,17 +1472,18 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-anchor_left = -0.005
-anchor_top = 0.657
-anchor_right = 0.847
-anchor_bottom = 1.0
-margin_left = 0.0944746
-margin_top = -0.000549316
-margin_right = 0.0904846
-margin_bottom = -1.80054
+anchor_left = 1.658
+anchor_top = 1.095
+anchor_right = 2.599
+anchor_bottom = 1.644
+margin_left = -28.1794
+margin_top = 296.323
+margin_right = -52.8364
+margin_bottom = 211.26
 texture = ExtResource( 34 )
 expand = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -1532,14 +1540,14 @@ __meta__ = {
 scale = Vector2( 0.295456, 0.295456 )
 
 [node name="TextureRect4" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-anchor_left = 0.957
-anchor_top = 0.807
-anchor_right = 1.957
-anchor_bottom = 0.94
-margin_left = -216.219
-margin_top = 158.719
-margin_right = -216.219
-margin_bottom = 179.919
+anchor_left = 0.176
+anchor_top = 1.072
+anchor_right = 1.176
+anchor_bottom = 1.24
+margin_left = 2.00575
+margin_top = 282.881
+margin_right = 2.00574
+margin_bottom = 283.081
 texture = ExtResource( 34 )
 expand = true
 __meta__ = {
@@ -1581,10 +1589,10 @@ __meta__ = {
 [node name="Static" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 0.905
 anchor_right = 0.905
-margin_left = -523.706
-margin_top = 109.238
-margin_right = -400.706
-margin_bottom = 161.238
+margin_left = -824.111
+margin_top = 0.666069
+margin_right = -701.111
+margin_bottom = 52.6661
 theme = SubResource( 31 )
 texture_normal = ExtResource( 37 )
 expand = true
@@ -1595,7 +1603,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="physics/CanvasLayer/Static"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Static"
+text = "Tools"
 align = 1
 valign = 1
 __meta__ = {
@@ -1603,14 +1611,15 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer"]
-margin_left = 392.141
-margin_top = 236.4
-margin_right = 545.141
-margin_bottom = 290.4
+margin_left = -5.05902
+margin_top = 3.11224
+margin_right = 130.941
+margin_bottom = 54.1122
 texture = ExtResource( 41 )
 expand = true
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Home Button" type="TextureButton" parent="physics/CanvasLayer/TextureRect"]
@@ -1618,13 +1627,10 @@ anchor_left = 0.263
 anchor_top = 0.25
 anchor_right = 0.263
 anchor_bottom = 0.25
-margin_left = -0.239002
+margin_left = -4.72887
 margin_top = 0.5
-margin_right = 73.761
+margin_right = 69.2711
 margin_bottom = 26.5
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Label" type="Label" parent="physics/CanvasLayer/TextureRect/Home Button"]
 anchor_right = 1.0

@@ -1,9 +1,9 @@
-Planet,Length of year (In Earth Days),Distance from Sun(million km),Namesake,Moons,Planet type,one way light time to the sun(in min)
-Mercury,88,68.981,Roman God of Speed,0,Terrestrial,3.835432
-Venus,225,107.95,Roman Goddess of Love,0,Terrestrial,6.001464
-Earth,365.25,148.44,"Variation of ""The Ground""",1,Terrestrial,8.252294
-Mars,687,218.67,Roman God of War,2,Terrestrial,12.086229
-Jupiter,4333,745.3,King of the Roman Gods,79,Gas Giant,41.41797
-Saturn,"10,759",1479.5,Father of Jupiter,62,Gas Giant,82.385078
-Uranus,30687,2948.4,Greek God of The Sky,27,Ice Giant,163.952306
-Neptune,60190,4474.6,Roman God of The Sea,14,Ice Giant,248.828376
+Planet  Length oDistanceNamesakeMoons   Planet tMass (10diameterMean dengravity Escape vPlanetarLength oDistanceMean TemRotationPeriheliAphelionAtmosphere
+Mercury       88  68.981Roman Go       0Terrestr  0.3301    4879    5429     3.7     4.3No        4222.6    57.9     167  1407.6      46    69.8minimal
+Venus        225  107.95Roman Go       0Terrestr    4.87  12,104    5243     8.9    10.4No          2802   108.2     464 -5832.5   107.5   108.9CO2, N2
+Earth     365.25  148.44Variatio       1Terrestr    5.97  12,756    5514     9.8    11.2No            24   149.6      15    23.9   147.1   152.1N2, O2, Ar
+Mars         687  218.67Roman Go       2Terrestr   0.642    6792    3934     3.7       5No          24.7     228     -65    24.6   206.7   249.3CO2, N2, Ar
+Jupiter     4333   745.3King of       79Gas Gian    1898 142,984    1326    23.1    59.5yes          9.9   778.5    -110     9.9   740.6   816.4H2, He
+Saturn    10,759  1479.5Father o      62Gas Gian     568 120,536     687       9    35.5yes         10.7    1432    -140    10.7  1357.6  1506.5H2, He
+Uranus     30687  2948.4Greek Go      27Ice Gian    86.8  51,118    1270     8.7    21.3yes         17.2    2867    -195   -17.2  2732.7  3001.4H2, He, CH4
+Neptune    60190  4474.6Roman Go      14Ice Gian     102  49,528    1638      11    23.5yes         16.1    4515    -200    16.1  4471.1  4558.9H2, He, CH4
