@@ -1,7 +1,7 @@
 extends Node2D
 
 var R = [39, 72.3, 100, 152.4]
-var G = 6.671e-11
+var G = 6.671e-7
 var body2 = {mass = 1e10, position = Vector2(612, 350), velocity = Vector2()}
 var body1 = {mass = 1660.1, position = Vector2(573, 350), velocity = Vector2(0, sqrt(G*body2.mass/R[0]))}
 #var dy3 = {mass = 6000, position = Vector2(539.7, 350), velocity = Vector2(0, sqrt(G*body2.mass/R[1]))}
@@ -17,23 +17,22 @@ var body1 = {mass = 1660.1, position = Vector2(573, 350), velocity = Vector2(0, 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var G = 6.671e-11
-	$Planets/Sun.set_mass(1e18)
-	$Planets/Mercury.set_mass (1e12)
+	$Planets/Sun.set_mass(103680000000000)
+	$Planets/Mercury.set_mass (17029440)
 	$Planets/Mercury.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Mercury.position.x)))
-	$Planets/Venus.set_mass (1e12)
+	$Planets/Venus.set_mass (252305280)
 	$Planets/Venus.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Venus.position.x)))	
-	$Planets/Earth.set_mass (1e12)
+	$Planets/Earth.set_mass (309598848)
 	$Planets/Earth.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Earth.position.x)))	
-	$Planets/Mars.set_mass (1e12)
+	$Planets/Mars.set_mass (33125760)
 	$Planets/Mars.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Mars.position.x)))
-	$Planets/Jupiter.set_mass (1e12)
+	$Planets/Jupiter.set_mass (98399059200)
 	$Planets/Jupiter.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Jupiter.position.x)))
-	$Planets/Saturn.set_mass (1e12)
+	$Planets/Saturn.set_mass (29460672000)
 	$Planets/Saturn.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Saturn.position.x)))
-	$Planets/Uranus.set_mass (1e12)
+	$Planets/Uranus.set_mass (4500230400)
 	$Planets/Uranus.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Uranus.position.x)))
-	$Planets/Neptune.set_mass (1e12)
+	$Planets/Neptune.set_mass (5308416000)
 	$Planets/Neptune.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Neptune.position.x)))
 	#print(.get_linear_velocity())
 	#get_node("mars3/moon").set_mass(7.3e10)
@@ -94,8 +93,16 @@ func _physics_process(delta):
 func _on_Add_pressed():
 	#var og = G
 	#G*=10
-	Engine.time_scale = Engine.get_time_scale()*2
-	
+	#Engine.time_scale = Engine.get_time_scale()*2
+	$Planets/Mercury.set_linear_velocity($Planets/Mercury.get_linear_velocity()*sqrt(2))
+	$Planets/Venus.set_linear_velocity($Planets/Venus.get_linear_velocity()*sqrt(2))
+	$Planets/Earth.set_linear_velocity($Planets/Earth.get_linear_velocity()*sqrt(2))
+	$Planets/Mars.set_linear_velocity($Planets/Mars.get_linear_velocity()*sqrt(2))
+	$Planets/Jupiter.set_linear_velocity($Planets/Jupiter.get_linear_velocity()*sqrt(2))
+	$Planets/Saturn.set_linear_velocity($Planets/Saturn.get_linear_velocity()*sqrt(2))
+	$Planets/Uranus.set_linear_velocity($Planets/Uranus.get_linear_velocity()*sqrt(2))
+	$Planets/Neptune.set_linear_velocity($Planets/Neptune.get_linear_velocity()*sqrt(2))
+	G = G*2
 	#$Earth.set_linear_velocity($Earth.get_linear_velocity()*sqrt(G)/sqrt(og))
 	#$mars.set_linear_velocity($mars.get_linear_velocity()*sqrt(G)/sqrt(og))
 	#$mars2.set_linear_velocity($mars2.get_linear_velocity()*sqrt(G)/sqrt(og))
@@ -120,8 +127,17 @@ func _on_Add_pressed():
 func _on_Subtract_pressed():
 	#var og = G
 	#G/=10
+	$Planets/Mercury.set_linear_velocity($Planets/Mercury.get_linear_velocity()/sqrt(2))
+	$Planets/Venus.set_linear_velocity($Planets/Venus.get_linear_velocity()/sqrt(2))
+	$Planets/Earth.set_linear_velocity($Planets/Earth.get_linear_velocity()/sqrt(2))
+	$Planets/Mars.set_linear_velocity($Planets/Mars.get_linear_velocity()/sqrt(2))
+	$Planets/Jupiter.set_linear_velocity($Planets/Jupiter.get_linear_velocity()/sqrt(2))
+	$Planets/Saturn.set_linear_velocity($Planets/Saturn.get_linear_velocity()/sqrt(2))
+	$Planets/Uranus.set_linear_velocity($Planets/Uranus.get_linear_velocity()/sqrt(2))
+	$Planets/Neptune.set_linear_velocity($Planets/Neptune.get_linear_velocity()/sqrt(2))
+	G = G/2
 	
-	Engine.time_scale = Engine.get_time_scale()/2
+	#Engine.time_scale = Engine.get_time_scale()/2
 	
 	#var txtLabel = float(get_node("CanvasLayer/LineEdit").get_text())
 	#$Earth.set_linear_velocity($Earth.get_linear_velocity()*sqrt(G)/sqrt(og))
@@ -166,8 +182,8 @@ func _on_Links_meta_clicked(meta):
 	pass # Replace with function body.
 
 func _on_Speed_Up_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect2/TextureRect3/Velocity").get_text())
-	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
+	var factor = float(get_node("CanvasLayer/StaticTools/DynamicTools/TextureRect6/TextureRect3/Velocity").get_text())
+	var planet = $CanvasLayer/StaticTools/DynamicTools/Dynamic/OptionButton.planet_name
 	print(factor)
 	print(planet)
 	#var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
@@ -180,8 +196,8 @@ func _on_Speed_Up_pressed():
 	pass # Replace with function body.
 
 func _on_Speed_Down_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect2/TextureRect3/Velocity").get_text())
-	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
+	var factor = float(get_node("CanvasLayer/StaticTools/DynamicTools/TextureRect6/TextureRect3/Velocity").get_text())
+	var planet = $CanvasLayer/StaticTools/DynamicTools/Dynamic/OptionButton.planet_name
 	#print(factor)
 	#print(planet)
 	#var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
@@ -195,22 +211,23 @@ func _on_Speed_Down_pressed():
 
 
 func _on_MassI_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect/TextureRect3/Mass").get_text())
-	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
+	var factor = float(get_node("CanvasLayer/StaticTools/DynamicTools/TextureRect5/TextureRect3/Mass").get_text())
+	var planet = $CanvasLayer/StaticTools/DynamicTools/Dynamic/OptionButton.planet_name
 	#print(factor)
 	#print(planet)
+	#print("Hello")
 	#var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
 	var path = "Planets/%s"%planet
 	if get_node(path):
 		var node = get_node(path)
-		if node.has_method("get_linear_velocity"):
+		if node.has_method("get_mass"):
 			#print(node.get_linear_velocity())
 			node.set_mass(node.get_mass()*factor)
 
 
 func _on_MassD_pressed():
-	var factor = float(get_node("CanvasLayer/DynamicTools/TextureRect/TextureRect3/Mass").get_text())
-	var planet = $CanvasLayer/DynamicTools/Dynamic/OptionButton.planet_name
+	var factor = float(get_node("CanvasLayer/StaticTools/DynamicTools/TextureRect5/TextureRect3/Mass").get_text())
+	var planet = $CanvasLayer/StaticTools/DynamicTools/Dynamic/OptionButton.planet_name
 	#print(factor)
 	#print(planet)
 	#var format = planet.substr(0, 1).to_upper()+planet.substr(1).to_lower()
