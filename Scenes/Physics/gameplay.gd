@@ -27,18 +27,51 @@ func _ready():
 #		$TextureRect.texture = load(path)
 	#pass
 
+var begin = 0
+var ret = 0
+
 func _on_Add2_pressed():
 	var z = get_node("/root/Godot physics/physics/CanvasLayer/Camera2D").get_zoom().x
+	print("speed: %f"%get_node("TextureRect").scroll_speed)
+	print("z: %f"%z)
+	print("prev_zoom: %f"%prev_zoom)
 	var s_speed = get_node("TextureRect").scroll_speed
-	get_node("TextureRect").scroll_speed = s_speed*z/5/Engine.time_scale
-	prev_zoom = z
+	if z>0.62 and z<100:
+		if z/1.5>1:
+			if ret:
+				get_node("TextureRect").scroll_speed = 2*(s_speed/z)
+			else:
+				get_node("TextureRect").scroll_speed = 2*(s_speed/(z/1.5))
+		else:
+			if ret:
+				get_node("TextureRect").scroll_speed = (s_speed*z)*2
+			else:
+				get_node("TextureRect").scroll_speed = (s_speed*(z/1.5))*2
+		prev_zoom = z
+		ret = ret^1
+	print("s_speed: %f"%get_node("TextureRect").scroll_speed)
 	pass # Replace with function body.
 
 
 func _on_Add3_pressed():
 	var z = get_node("/root/Godot physics/physics/CanvasLayer/Camera2D").get_zoom().x
 	var s_speed = get_node("TextureRect").scroll_speed
-	get_node("TextureRect").scroll_speed = s_speed/(prev_zoom)*5*Engine.time_scale
+	print("z: %f"%z)
+	print("prev_zoom: %f"%prev_zoom)
+	if z<100 and z>0.62:
+		if z*1.5>1:
+			if ret:
+				get_node("TextureRect").scroll_speed = (s_speed*z)/2
+			else:
+				get_node("TextureRect").scroll_speed = (s_speed*(z*1.5))/2
+		else:
+			if ret:
+				get_node("TextureRect").scroll_speed = (s_speed/z)/2
+			else:
+				get_node("TextureRect").scroll_speed = (s_speed/(z*1.5))/2
+		ret = ret^1
+		prev_zoom = z
+	print("s_speed: %f"%get_node("TextureRect").scroll_speed)
 	pass # Replace with function body.
 
 

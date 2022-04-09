@@ -6,14 +6,14 @@
 [ext_resource path="res://Assets/Fonts/static/Oxanium-ExtraBold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/BUTTONS/button-music_on-removebg-preview.png" type="Texture" id=5]
 [ext_resource path="res://Assets/BUTTONS/button-musc_off-removebg-preview.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Interface/collide (2).tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/BUTTONS/png-close-button-icon-removebg-preview.png" type="Texture" id=8]
-[ext_resource path="res://SCENES/Interface/collide.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/music/Relax.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Fonts/The Frontman.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://New Assets/earth.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sprites/venus.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sprites/uranus.png" type="Texture" id=15]
 [ext_resource path="res://SCENES/Interface/bg anim.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/music/OutThere.ogg" type="AudioStream" id=19]
 [ext_resource path="res://SCRIPTS/Interface/shooting stars.gd" type="Script" id=20]
 
 [sub_resource type="DynamicFont" id=1]
@@ -99,7 +99,7 @@ __meta__ = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 833.168, -7.32581 )
 scale = Vector2( 0.236443, 0.213825 )
-stream = ExtResource( 19 )
+stream = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -107,8 +107,8 @@ stream = ExtResource( 19 )
 position = Vector2( 510, 300 )
 current = true
 
-[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 10 )]
-position = Vector2( 1.41425, -5.65686 )
+[node name="Node2D2" parent="CanvasLayer" instance=ExtResource( 7 )]
+position = Vector2( -5.99323, 434.509 )
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer"]
 anchor_left = 0.5

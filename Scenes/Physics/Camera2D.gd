@@ -1,5 +1,6 @@
 extends Camera2D
 var stop = false
+
 func _process(delta):
 	var move_speed = 1000*get_zoom().x/Engine.time_scale
 	var origin = get_global_transform_with_canvas().origin

@@ -17,6 +17,7 @@ var body1 = {mass = 1660.1, position = Vector2(573, 350), velocity = Vector2(0, 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CanvasLayer/AudioStreamPlayer2D.play()
 	$Planets/Sun.set_mass(103680000000000)
 	$Planets/Mercury.set_mass (17029440)
 	$Planets/Mercury.set_linear_velocity(Vector2(0, sqrt(G*$Planets/Sun.get_mass()/$Planets/Mercury.position.x)))
@@ -249,3 +250,6 @@ func _on_CheckButton2_pressed():
 		current.set_visible(true)
 		$CanvasLayer/StaticTools/TextureRect2/CheckButton2/Label.text = "Off"
 	pass # Replace with function body.
+
+func _on_m_pressed():
+	$CanvasLayer/AudioStreamPlayer2D.stream_paused = !$CanvasLayer/AudioStreamPlayer2D.stream_paused

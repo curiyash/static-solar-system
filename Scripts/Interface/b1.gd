@@ -7,6 +7,7 @@ func _ready():
 	pass
 
 func _integrate_forces(state):
+	viewport = get_viewport().get_visible_rect().size
 	var size = sprite.texture.get_size()* sprite.scale
 	var trans = state.get_transform()
 	if trans.origin.x < -size.x/2:
@@ -16,7 +17,7 @@ func _integrate_forces(state):
 	elif trans.origin.y < -size.y/2:
 		trans.origin.y += viewport.y + size.y
 	elif trans.origin.y > viewport.y + size.y /2:
-		trans.origin.y -= viewport.y + size.y 
+		trans.origin.y -= viewport.y + size.y
 		
 	state.set_transform(trans)
 	pass
