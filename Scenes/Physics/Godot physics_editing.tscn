@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Scenes/Physics/Orbits.gd" type="Script" id=1]
 [ext_resource path="res://New Assets/mercury.png" type="Texture" id=2]
@@ -46,8 +46,7 @@
 [ext_resource path="res://Assets/BUTTONS/Neon borders/MASS.png" type="Texture" id=44]
 [ext_resource path="res://Assets/Fonts/oxanium/Oxanium-ExtraBold.ttf" type="DynamicFontData" id=45]
 [ext_resource path="res://Assets/music/Relax.mp3" type="AudioStream" id=46]
-[ext_resource path="res://Assets/BUTTONS/button-music_on-removebg-preview.png" type="Texture" id=47]
-[ext_resource path="res://Assets/BUTTONS/button-musc_off-removebg-preview.png" type="Texture" id=48]
+[ext_resource path="res://Assets/BUTTONS/Neon borders/music button.png" type="Texture" id=47]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 48.0104
@@ -851,10 +850,11 @@ __meta__ = {
 }
 
 [node name="Add2" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
-anchor_top = 0.252
+anchor_top = 0.096
+anchor_right = 0.446
 anchor_bottom = 0.252
-margin_top = -80.788
-margin_right = 175.0
+margin_top = 0.176006
+margin_right = 0.168015
 margin_bottom = 0.21199
 size_flags_horizontal = 3
 texture_normal = ExtResource( 22 )
@@ -968,12 +968,10 @@ __meta__ = {
 
 [node name="SetSpeed" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
 anchor_left = 0.051
-anchor_top = 0.116
-anchor_right = 0.051
+anchor_right = 0.396
 anchor_bottom = 0.116
 margin_left = 0.137997
-margin_top = -60.204
-margin_right = 135.138
+margin_right = -0.10199
 margin_bottom = -0.204002
 rect_min_size = Vector2( 135, 60 )
 mouse_default_cursor_shape = 2
@@ -1002,12 +1000,10 @@ __meta__ = {
 
 [node name="Reset" type="TextureButton" parent="physics/CanvasLayer/StaticTools"]
 anchor_left = 0.445
-anchor_top = 0.116
-anchor_right = 0.445
+anchor_right = 0.788
 anchor_bottom = 0.116
 margin_left = -0.440002
-margin_top = -60.204
-margin_right = 134.56
+margin_right = 0.104004
 margin_bottom = -0.204002
 rect_min_size = Vector2( 135, 60 )
 mouse_default_cursor_shape = 2
@@ -1031,12 +1027,12 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
 anchor_left = 0.411
-anchor_top = 0.481
-anchor_right = 0.411
+anchor_top = 0.286
+anchor_right = 0.817
 anchor_bottom = 0.481
 margin_left = -0.0148163
-margin_top = -101.137
-margin_right = 158.985
+margin_top = 0.0680084
+margin_right = -0.166992
 margin_bottom = -0.137344
 texture = ExtResource( 23 )
 expand = true
@@ -1089,11 +1085,12 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-anchor_top = 0.472
+anchor_top = 0.293
+anchor_right = 0.416
 anchor_bottom = 0.472
 margin_left = 4.23779
-margin_top = -92.8491
-margin_right = 163.238
+margin_top = 0.0518951
+margin_right = 0.166016
 margin_bottom = 0.15094
 texture = ExtResource( 32 )
 expand = true
@@ -1261,12 +1258,12 @@ __meta__ = {
 
 [node name="Simulation Speed" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
 anchor_left = 0.414
-anchor_top = 0.274
-anchor_right = 0.414
+anchor_top = 0.093
+anchor_right = 0.822
 anchor_bottom = 0.274
 margin_left = -0.156784
-margin_top = -93.8007
-margin_right = 159.843
+margin_top = 0.138294
+margin_right = -0.0930176
 margin_bottom = 0.199326
 mouse_filter = 0
 texture = ExtResource( 23 )
@@ -1387,12 +1384,13 @@ __meta__ = {
 }
 
 [node name="DynamicTools" type="TextureRect" parent="physics/CanvasLayer/StaticTools"]
-anchor_top = 0.59
-anchor_right = 0.712
+anchor_left = -0.028
+anchor_top = 0.555
+anchor_right = 0.834
 anchor_bottom = 0.955
-margin_left = -11.0
-margin_top = -18.21
-margin_right = 47.896
+margin_left = -0.0240002
+margin_top = -0.0450134
+margin_right = 0.0719604
 margin_bottom = 2.35498
 texture = ExtResource( 34 )
 expand = true
@@ -1409,14 +1407,14 @@ __meta__ = {
 }
 
 [node name="Dynamic" parent="physics/CanvasLayer/StaticTools/DynamicTools" instance=ExtResource( 17 )]
-anchor_left = 0.503
-anchor_top = 0.209
-anchor_right = 0.503
-anchor_bottom = 0.209
-margin_left = -105.116
-margin_top = -15.9747
-margin_right = 104.884
-margin_bottom = 16.0253
+anchor_left = 0.192
+anchor_top = 0.133
+anchor_right = 0.813
+anchor_bottom = 0.285
+margin_left = 0.0019989
+margin_top = -0.0147018
+margin_right = 0.104034
+margin_bottom = 0.0652962
 mouse_default_cursor_shape = 2
 
 [node name="TextureRect5" type="TextureRect" parent="physics/CanvasLayer/StaticTools/DynamicTools"]
@@ -1832,13 +1830,13 @@ stream = ExtResource( 46 )
 [node name="m" type="TextureButton" parent="physics/CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -697.0
-margin_top = 49.0
-margin_right = -197.0
-margin_bottom = 549.0
+margin_left = -675.765
+margin_top = 56.6697
+margin_right = -154.765
+margin_bottom = 491.67
 rect_min_size = Vector2( 50, 80 )
-rect_scale = Vector2( 0.16, 0.16 )
-texture_normal = ExtResource( 48 )
+rect_scale = Vector2( 0.12, 0.12 )
+texture_normal = ExtResource( 47 )
 texture_pressed = ExtResource( 47 )
 texture_hover = ExtResource( 47 )
 texture_disabled = ExtResource( 47 )
@@ -1847,9 +1845,7 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="physics/CanvasLayer/Dynamis" to="physics/CanvasLayer/Camera2D" method="_on_Dynamis_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4" to="gameplay" method="_on_Add2_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect/Add4" to="physics/CanvasLayer/Camera2D" method="_on_Add2_pressed"]
-[connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect2/Add3" to="gameplay" method="_on_Add3_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/StaticTools/Add2/TextureRect2/Add3" to="physics/CanvasLayer/Camera2D" method="_on_Add3_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/StaticTools/SetSpeed" to="gameplay" method="_on_SetSpeed_pressed"]
 [connection signal="pressed" from="physics/CanvasLayer/StaticTools/Reset" to="physics" method="_on_Button_pressed"]

@@ -56,21 +56,6 @@ func _on_Add2_pressed():
 func _on_Add3_pressed():
 	var z = get_node("/root/Godot physics/physics/CanvasLayer/Camera2D").get_zoom().x
 	var s_speed = get_node("TextureRect").scroll_speed
-	print("z: %f"%z)
-	print("prev_zoom: %f"%prev_zoom)
-	if z<100 and z>0.62:
-		if z*1.5>1:
-			if ret:
-				get_node("TextureRect").scroll_speed = (s_speed*z)/2
-			else:
-				get_node("TextureRect").scroll_speed = (s_speed*(z*1.5))/2
-		else:
-			if ret:
-				get_node("TextureRect").scroll_speed = (s_speed/z)/2
-			else:
-				get_node("TextureRect").scroll_speed = (s_speed/(z*1.5))/2
-		ret = ret^1
-		prev_zoom = z
 	print("s_speed: %f"%get_node("TextureRect").scroll_speed)
 	pass # Replace with function body.
 
